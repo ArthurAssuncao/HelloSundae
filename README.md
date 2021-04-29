@@ -96,27 +96,34 @@ O Front-end do site é feito utilizando:
 
 ## :runner: Como executar o código
 
+Primeiro baixe as dependências do projeto:
+
+```bash
+yarn install # or npm install
+```
+
 Para rodar localmente utilize o comando abaixo:
 
 ```bash
-npm dev
+yarn dev # or npm dev
 ```
 
 Para executar os testes, utilize o comando:
 
 ```bash
-npm test
+yarn test # or npm test
 ```
 
 Para realizar o build local, utilize o comando:
 
 ```bash
-npm build
+yarn build # or npm build
 ```
 
 Abra [http://localhost:3000](http://localhost:3000) no navegador para ver o resultado.
 
 
+<div id='license'/>
 
 # :memo: Licença
 
