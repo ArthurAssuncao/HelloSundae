@@ -1,9 +1,10 @@
-[comment]: # (Logo)
+[comment]: # 'Logo'
+
 <p align="center">
-    <img src="https://raw.githubusercontent.com/ArthurAssuncao/HelloSundae/main/src/assets/icons/hello-sundae-w-text.svg" />
+    <img src="https://raw.githubusercontent.com/ArthurAssuncao/HelloSundae/main/src/assets/icons/hello-sundae-w-text.svg" width="70%" />
 </p>
 
-[comment]: # (Badges)
+[comment]: # 'Badges'
 
 <p align="center">
 	<img alt="Vercel" src="http://therealsujitk-vercel-badge.vercel.app/?app=HelloSundae">
@@ -25,10 +26,10 @@
     <a href="README_EN.md" alt="README in English">EN</a>
 </p>
 
-[comment]: # (Foto do app)
-[comment]: # (Mockup IPhone https://mockuphone.com/device/iphone12black)
-[comment]: # (Mockup IPad https://mockuphone.com/device/ipadsilver)
-[comment]: # (Emoji list https://gist.github.com/rxaviers/7360908)
+[comment]: # 'Foto do app'
+[comment]: # 'Mockup IPhone https://mockuphone.com/device/iphone12black'
+[comment]: # 'Mockup IPad https://mockuphone.com/device/ipadsilver'
+[comment]: # 'Emoji list https://gist.github.com/rxaviers/7360908'
 
 <table align="center">
     <tr>
@@ -59,13 +60,12 @@
 
 ## :clap: Melhorias realizadas no projeto original
 
--   :star2: Interface totalmente remodelada com cores bonitas;
--   :star2: Criado um Logo para o projeto;
--   :star2: Código css responsivo;
--   :wrench: Alteração do nome e cores, ambos pensados e criados por mim ([@arthurassuncao](http://github.com/arthurAssuncao));
--   :up: Uso de componentização;
--   :up: Criados mais testes;
-
+- :star2: Interface totalmente remodelada com cores bonitas;
+- :star2: Criado um Logo para o projeto;
+- :star2: Código css responsivo;
+- :wrench: Alteração do nome e cores, ambos pensados e criados por mim ([@arthurassuncao](http://github.com/arthurAssuncao));
+- :up: Uso de componentização;
+- :up: Criados mais testes;
 
 <div id='images'/>
 
@@ -121,7 +121,6 @@ yarn build # or npm build
 ```
 
 Abra [http://localhost:3000](http://localhost:3000) no navegador para ver o resultado.
-
 
 <div id='license'/>
 
