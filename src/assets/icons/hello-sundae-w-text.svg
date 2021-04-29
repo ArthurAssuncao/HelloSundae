@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="100"
+   height="19"
+   preserveAspectRatio="xMidYMid meet"
+   viewBox="0 0 100 19"
+   version="1.1"
+   id="svg6"
+   sodipodi:docname="hello-sundae-w-text.svg"
+   inkscape:version="1.0.2 (e86c870879, 2021-01-15, custom)">
+  <metadata
+     id="metadata12">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs10">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient1922">
+      <stop
+         style="stop-color:#6af59c;stop-opacity:0.8"
+         offset="0"
+         id="stop1918" />
+      <stop
+         style="stop-color:#ebbbed;stop-opacity:1"
+         offset="1"
+         id="stop1920" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1922"
+       id="linearGradient1926"
+       gradientUnits="userSpaceOnUse"
+       x1="2.1365652"
+       y1="1.8179557"
+       x2="18.408588"
+       y2="16.99877"
+       spreadMethod="pad" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1922"
+       id="linearGradient844"
+       x1="22.700165"
+       y1="9.5895805"
+       x2="90.489922"
+       y2="9.5895805"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1019"
+     id="namedview8"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="7.9851105"
+     inkscape:cx="48.165365"
+     inkscape:cy="6.6426071"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g929"
+     inkscape:document-rotation="0" />
+  <path
+     d="M 14,0 H 6 C 2.691,0 0,2.691 0,6 v 12 a 1,1 0 0 0 1,1 h 13 c 3.309,0 6,-2.691 6,-6 V 6 C 20,2.691 17.309,0 14,0 Z m 4,13 c 0,2.206 -1.794,4 -4,4 H 2 V 6 C 2,3.794 3.794,2 6,2 h 8 c 2.206,0 4,1.794 4,4 z"
+     fill="#626262"
+     id="path2"
+     style="opacity:1;mix-blend-mode:normal;fill:url(#linearGradient1926);fill-opacity:1" />
+  <path
+     d="m 9.3175788,15.281254 c 0.268663,0.582235 1.0961782,0.582235 1.3648412,0 l 2.369632,-4.904505 H 6.9479481 Z"
+     fill="#626262"
+     id="path14"
+     style="fill:#f6de7e;fill-opacity:1;stroke-width:0.999997"
+     sodipodi:nodetypes="ccccc" />
+  <path
+     d="m 13.433554,7.1611788 h -0.02241 c 0.585635,-5.1003132 -7.4079263,-5.1003132 -6.8222913,0 h -0.02241 c -1.526029,0 -1.526029,2.2890442 0,2.2890442 h 6.8671143 c 1.526029,0 1.526029,-2.2890442 0,-2.2890442 z"
+     fill="#626262"
+     id="path14-6"
+     style="fill:#f37da2;fill-opacity:1;stroke-width:0.999997"
+     sodipodi:nodetypes="cccssssc" />
+  <g
+     id="g929">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:1.25;font-family:'Happy School';-inkscape-font-specification:'Happy School';display:inline;fill:url(#linearGradient844);fill-opacity:1;stroke:#ffffff;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
+       x="22.404064"
+       y="13.476575"
+       id="text878"><tspan
+         sodipodi:role="line"
+         id="tspan876"
+         x="22.404064"
+         y="13.476575"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;font-family:'Happy School';-inkscape-font-specification:'Happy School';fill:#000000;fill-opacity:0.8;stroke:#ffffff;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"><tspan
+   style="font-size:12px;fill:#6fced2;fill-opacity:0.8;stroke:#ffffff;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
+   id="tspan852">H</tspan><tspan
+   style="font-size:12px;fill:#f6de7e;fill-opacity:0.8;stroke:#ffffff;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
+   id="tspan854">e</tspan><tspan
+   style="font-size:12px;fill:#f37da0;fill-opacity:0.8;stroke:#ffffff;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
+   id="tspan858">l</tspan><tspan
+   style="font-size:12px;fill:#6af59c;fill-opacity:0.8;stroke:#ffffff;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
+   id="tspan856">l</tspan><tspan
+   style="font-size:12px;fill:#ebbbed;fill-opacity:0.8;stroke:#ffffff;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
+   id="tspan862">o</tspan> <tspan
+   style="font-size:12px;fill:#f49381;fill-opacity:0.8;stroke:#ffffff;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
+   id="tspan864">S</tspan><tspan
+   style="font-size:12px;fill:#6fced2;fill-opacity:0.8;stroke:#ffffff;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
+   id="tspan866">u</tspan><tspan
+   style="font-size:12px;fill:#f6de7e;fill-opacity:0.8;stroke:#ffffff;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
+   id="tspan868">n</tspan><tspan
+   style="font-size:12px;fill:#f37da0;fill-opacity:0.8;stroke:#ffffff;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
+   id="tspan870">d</tspan><tspan
+   style="font-size:12px;fill:#6af59c;fill-opacity:0.8;stroke:#ffffff;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
+   id="tspan872">a</tspan><tspan
+   style="font-size:12px;fill:#ebbbed;fill-opacity:0.8;stroke:#ffffff;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
+   id="tspan874">e</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:1.25;font-family:'Happy School';-inkscape-font-specification:'Happy School';display:inline;fill:url(#linearGradient844);fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none"
+       x="22.404064"
+       y="13.476575"
+       id="text901"
+       sodipodi:insensitive="true"><tspan
+         sodipodi:role="line"
+         id="tspan899"
+         x="22.404064"
+         y="13.476575"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;font-family:'Happy School';-inkscape-font-specification:'Happy School';fill:#000000;fill-opacity:0.8;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"><tspan
+   style="font-size:12px;fill:#6fced2;fill-opacity:0.8;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+   id="tspan877">H</tspan><tspan
+   style="font-size:12px;fill:#f6de7e;fill-opacity:0.8;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+   id="tspan879">e</tspan><tspan
+   style="font-size:12px;fill:#f37da0;fill-opacity:0.8;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+   id="tspan881">l</tspan><tspan
+   style="font-size:12px;fill:#6af59c;fill-opacity:0.8;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+   id="tspan883">l</tspan><tspan
+   style="font-size:12px;fill:#ebbbed;fill-opacity:0.8;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+   id="tspan885">o</tspan> <tspan
+   style="font-size:12px;fill:#f49381;fill-opacity:0.8;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+   id="tspan887">S</tspan><tspan
+   style="font-size:12px;fill:#6fced2;fill-opacity:0.8;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+   id="tspan889">u</tspan><tspan
+   style="font-size:12px;fill:#f6de7e;fill-opacity:0.8;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+   id="tspan891">n</tspan><tspan
+   style="font-size:12px;fill:#f37da0;fill-opacity:0.8;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+   id="tspan893">d</tspan><tspan
+   style="font-size:12px;fill:#6af59c;fill-opacity:0.8;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+   id="tspan895">a</tspan><tspan
+   style="font-size:12px;fill:#ebbbed;fill-opacity:0.8;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+   id="tspan897">e</tspan></tspan></text>
+  </g>
+</svg>
