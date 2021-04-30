@@ -16,7 +16,7 @@
 	<img src="https://img.shields.io/static/v1?label=Arthur%20Assuncao&message=2021&color=8A47F5&labelColor=5A5A5A" alt="Arthur Assuncao 2021" />
     <img src="https://img.shields.io/static/v1?label=ReactJS&message=yes&color=61dbfb&labelColor=5A5A5A" alt="ReactJS" />
     <!--<img src="https://img.shields.io/static/v1?label=NextJS&message=yes&color=000000&labelColor=5A5A5A" alt="NextJS" />-->
-    <!--<img src="https://img.shields.io/static/v1?label=types&message=typescript&color=0f80c0&labelColor=5A5A5A" alt="Typescript" />-->
+    <img src="https://img.shields.io/static/v1?label=types&message=typescript&color=0f80c0&labelColor=5A5A5A" alt="Typescript" />
     <!--<img src="https://img.shields.io/static/v1?label=SASS&message=yes&color=cc6699&labelColor=5A5A5A" alt="SASS" />-->
 </p>
 
@@ -65,7 +65,8 @@
 - :star2: Código css responsivo;
 - :wrench: Alteração do nome e cores, ambos pensados e criados por mim ([@arthurassuncao](http://github.com/arthurAssuncao));
 - :up: Uso de componentização;
-- :up: Criados mais testes;
+- :up: Criados mais testes baseados em artigos e em testes do [Polaris React](https://github.com/Shopify/polaris-react);
+- :up: Adição do Typescript;
 
 <div id='images'/>
 
@@ -89,7 +90,8 @@ O Front-end do site é feito utilizando:
 
 - **React Testing Library** e **Jest**: para realizar testes funcionais e utilitários;
 - **ReactJS**: diversos pacotes são utilizados;
-- **CSS Modules **: para isolar os componentes e ter maior controle;
+- **Typescript**: para checagem de tipo;
+- **CSS Modules**: para isolar os componentes e ter maior controle;
 - **Variáveis CSS** para manter consistência nos valores de propriedades;
 
 <div id='how-to-run'/>
@@ -130,4 +132,4 @@ Esse projeto é um software de código-fonte aberto sob a licença MIT. Veja o a
 
 <hr>
 
-Feito com :hearts: por Arthur Assuncao.
+Feito com :muscle: por Arthur Assuncao.

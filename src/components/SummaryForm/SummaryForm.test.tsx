@@ -1,4 +1,9 @@
-import { cleanup, render, screen } from '@testing-library/react';
+import {
+  cleanup,
+  render,
+  screen,
+  waitForElementToBeRemoved,
+} from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import React from 'react';
 import { SummaryForm } from './SummaryForm';
@@ -162,24 +167,35 @@ describe('<SummaryForm />', () => {
   });
 
   describe('Label dialog', () => {
-    it('Terms and Condition dialog appears on hover and disappear on unhover in checkbox label', () => {
+    it('Terms and Condition dialog appears on hover and disappear after 500ms on unhover in checkbox label', async () => {
       render(<SummaryForm />);
       // const checkbox = screen.getByRole('checkbox');
       const internSpan = screen.getByText('Terms and Conditions');
 
-      let dialog = screen.queryByText(/App Terms and Conditions/i);
+      const nullDialog = screen.queryByText(/App Terms and Conditions/i);
 
-      expect(dialog).not.toBeInTheDocument();
+      expect(nullDialog).not.toBeInTheDocument();
 
       userEvent.hover(internSpan);
 
-      dialog = screen.queryByText(/App Terms and Conditions/i);
+      const dialog = screen.getByText(/App Terms and Conditions/i);
 
       expect(dialog).toBeInTheDocument();
 
-      userEvent.unhover(internSpan);
+      // this way
+      // jest.useFakeTimers();
+      // userEvent.unhover(internSpan);
+      // jest.runAllTimers();
 
-      expect(dialog).not.toBeInTheDocument();
+      // const nullDialogAgain = screen.queryByText(/App Terms and Conditions/i);
+
+      // expect(nullDialogAgain).not.toBeInTheDocument();
+
+      // or this way
+      userEvent.unhover(internSpan);
+      waitForElementToBeRemoved(() => {
+        screen.queryByText(/App Terms and Conditions/i);
+      });
     });
   });
 
