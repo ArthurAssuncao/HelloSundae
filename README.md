@@ -1,7 +1,7 @@
 [comment]: # 'Logo'
 
 <p align="center">
-    <img src="https://raw.githubusercontent.com/ArthurAssuncao/HelloSundae/main/src/assets/icons/hello-sundae-w-text.svg" width="70%" />
+    <img src="https://raw.githubusercontent.com/ArthurAssuncao/HelloSundae/main/src/assets/icons/hello-sundae-w-text.png" width="70%" />
 </p>
 
 [comment]: # 'Badges'
@@ -67,6 +67,7 @@
 - :up: Uso de componentização;
 - :up: Criados mais testes baseados em artigos e em testes do [Polaris React](https://github.com/Shopify/polaris-react);
 - :up: Adição do Typescript;
+- :star2: Nova estrutura de diretórios e arquivos;
 
 <div id='images'/>
 

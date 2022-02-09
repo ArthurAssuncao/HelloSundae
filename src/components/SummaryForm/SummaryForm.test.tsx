@@ -1,3 +1,4 @@
+/* eslint-disable max-lines-per-function */
 import {
   cleanup,
   render,
@@ -22,7 +23,7 @@ describe('<SummaryForm />', () => {
       );
 
       expect(checkbox).not.toBeChecked();
-      expect(checkboxLabel).toBeInTheDocument(); //toHaveTextContent("I agree to");
+      expect(checkboxLabel).toBeInTheDocument(); // toHaveTextContent("I agree to");
     });
 
     it('checkbox turns checked when click in checkbox', () => {
@@ -67,7 +68,9 @@ describe('<SummaryForm />', () => {
         const checkbox = screen.getByRole('checkbox');
         checkbox.onchange = spy;
 
-        userEvent.type(checkbox, '{space}');
+        userEvent.click(checkbox, '{space}' as MouseEventInit, {
+          skipPointerEventsCheck: true,
+        });
 
         expect(spy).toHaveBeenCalledTimes(1);
         expect(checkbox).toBeChecked();
@@ -80,7 +83,9 @@ describe('<SummaryForm />', () => {
         const checkbox = screen.getByRole('checkbox');
         checkbox.onchange = spy;
 
-        userEvent.type(checkbox, '{enter}');
+        userEvent.click(checkbox, '{enter}' as MouseEventInit, {
+          skipPointerEventsCheck: true,
+        });
 
         expect(spy).toHaveBeenCalledTimes(1);
         expect(checkbox).toBeChecked();
@@ -193,9 +198,9 @@ describe('<SummaryForm />', () => {
 
       // or this way
       userEvent.unhover(internSpan);
-      waitForElementToBeRemoved(() => {
-        screen.queryByText(/App Terms and Conditions/i);
-      });
+      await waitForElementToBeRemoved(
+        screen.queryByText(/App Terms and Conditions/i),
+      );
     });
   });
 
@@ -219,7 +224,7 @@ describe('<SummaryForm />', () => {
       render(<SummaryForm />);
       const button = screen.getByRole('button', { name: /Confirm order/i });
 
-      expect(button).not.toBeEnabled();
+      expect(button).toBeDisabled();
 
       button.onclick = spy;
       userEvent.click(button);
