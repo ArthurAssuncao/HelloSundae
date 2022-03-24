@@ -3,7 +3,9 @@
   "version": "0.1.1",
   "private": true,
   "dependencies": {
+    "axios": "^0.25.0",
     "browserslist": "^4.19.1",
+    "dotenv": "^16.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "5.0.0",
@@ -50,6 +52,7 @@
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-react-func": "^0.1.17",
     "eslint-plugin-simple-import-sort": "^7.0.0",
     "eslint-plugin-testing-library": "^5.0.5",
     "msw": "^0.36.8",

@@ -8,27 +8,32 @@ const fs = require('fs');
 const app = express();
 
 // CORS for react app, assuming port 3000
-app.use(cors({
-  origin: 'http://localhost:3000',
-  credentials: true
-}))
+app.use(
+  cors({
+    origin: 'http://localhost:3000',
+    credentials: true,
+  }),
+);
 
 // use middleware to serve static images
-app.use(express.static('public'))
+app.use(express.static('public'));
 
 // read data from options file
-const helloSundaeOptionsRaw = fs.readFileSync('./hello-sundae-options.json', 'utf-8');
+const helloSundaeOptionsRaw = fs.readFileSync(
+  './hello-sundae-options.json',
+  'utf-8',
+);
 const helloSundaeOptions = JSON.parse(helloSundaeOptionsRaw);
 
 app.get('/scoops', (req, res) => {
   // return data from file
-  res.json(helloSundaeOptions.iceCreamFlavors)
-})
+  res.json(helloSundaeOptions.iceCreamFlavors);
+});
 
 app.get('/toppings', (req, res) => {
   // return data from file
-  res.json(sundaeOptions.toppings)
-})
+  res.json(helloSundaeOptions.toppings);
+});
 
 app.post('/order', (req, res) => {
   // create a random order number
@@ -37,13 +42,14 @@ app.post('/order', (req, res) => {
   res
     // set status to 201 (created)
     .status(201)
-
     // return "order number" as the response
-    .json({ orderNumber })
-})
+    .json({ orderNumber });
+});
 
 if (require.main === module) {
-  app.listen(3030, () => console.log('Hello Sundae server listening on port 3030!'))
+  app.listen(3030, () =>
+    console.log('Hello Sundae server listening on port 3030!'),
+  );
 }
 
 module.exports = app;

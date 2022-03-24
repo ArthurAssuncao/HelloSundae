@@ -6,7 +6,7 @@ import {
   waitForElementToBeRemoved,
 } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import React from 'react';
+import React, { MouseEvent } from 'react';
 import { SummaryForm } from './SummaryForm';
 
 // checkbox
@@ -207,6 +207,9 @@ describe('<SummaryForm />', () => {
   describe('Button', () => {
     it('submit is called when clicked if enabled', () => {
       const spy = jest.fn();
+      spy.mockImplementation((event: MouseEvent) => {
+        event.preventDefault();
+      });
       render(<SummaryForm />);
       const button = screen.getByRole('button', { name: /Confirm order/i });
       button.removeAttribute('disabled');
@@ -221,6 +224,9 @@ describe('<SummaryForm />', () => {
   describe('Checkbox and Button interaction', () => {
     it('confirm button is disabled when checkbox is unchecked', () => {
       const spy = jest.fn();
+      spy.mockImplementation((event: MouseEvent) => {
+        event.preventDefault();
+      });
       render(<SummaryForm />);
       const button = screen.getByRole('button', { name: /Confirm order/i });
 
@@ -234,6 +240,9 @@ describe('<SummaryForm />', () => {
 
     it('confirm button is enabled when checkbox is checked', () => {
       const spy = jest.fn();
+      spy.mockImplementation((event: MouseEvent) => {
+        event.preventDefault();
+      });
       render(<SummaryForm />);
       const checkbox = screen.getByRole('checkbox');
       const button = screen.getByRole('button', { name: /Confirm order/i });

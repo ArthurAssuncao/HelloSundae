@@ -1,6 +1,6 @@
 import React from 'react';
-import { SummaryForm } from '../../components/SummaryForm';
 import style from './OrderSummary.module.css';
+import { SummaryForm } from './SummaryForm';
 
 const OrderSummary = (): React.ReactElement => {
   return (
