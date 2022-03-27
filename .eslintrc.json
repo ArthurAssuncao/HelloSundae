@@ -72,20 +72,20 @@
     ],
     "comma-dangle": "off",
     "no-underscore-dangle": ["error", { "allow": ["_id"] }],
-    "indent": ["error", 2],
+    "indent": ["warn", 2],
     "no-spaced-func": 2,
     "linebreak-style": ["error", "unix"],
     "curly": ["error"],
     "no-else-return": ["error"],
     "quotes": [
-      "error",
+      "warn",
       "single",
       {
         "allowTemplateLiterals": true
       }
     ],
     "semi": [
-      2,
+      1,
       "always",
       {
         "omitLastInOneLineBlock": true

@@ -69,6 +69,20 @@
 - :up: Adição do Typescript;
 - :star2: Nova estrutura de diretórios e arquivos;
 
+## My redesign
+
+### :camera: Order screen redesign
+
+<img src="https://raw.githubusercontent.com/ArthurAssuncao/HelloSundae/main/docs/screenshots/order-old-new.png" alt="Order Screen" width="75%" />
+
+### :camera: Order summary screen redesign
+
+<img src="https://raw.githubusercontent.com/ArthurAssuncao/HelloSundae/main/docs/screenshots/order-summary-old-new.png" alt="Order Screen" width="75%" />
+
+### :camera: Order finished screen redesign
+
+<img src="https://raw.githubusercontent.com/ArthurAssuncao/HelloSundae/main/docs/screenshots/order-finished-old-new.png" alt="Order Screen" width="75%" />
+
 <div id='images'/>
 
 ## :camera: Layout do projeto

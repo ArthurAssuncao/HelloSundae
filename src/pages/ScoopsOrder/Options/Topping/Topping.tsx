@@ -16,7 +16,7 @@ const ToppingComp = (props: Topping): React.ReactElement => {
   const { name, imagePath, updateItemCount } = props;
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
-    updateItemCount(name, event.target.value);
+    updateItemCount(name, event.target.checked ? '1' : '0');
   };
 
   return (
@@ -30,13 +30,12 @@ const ToppingComp = (props: Topping): React.ReactElement => {
       <form className={style.form}>
         <label className={style.label}>
           <input
-            type="number"
-            defaultValue={0}
-            className={style.count}
+            type="checkbox"
+            defaultChecked={false}
+            className={style.checkbox}
             onChange={handleChange}
             name={name}
             aria-label={name}
-            role="spinbutton"
           />
         </label>
       </form>
