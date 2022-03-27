@@ -1,15 +1,5 @@
 {
   "root": true,
-  "parser": "@typescript-eslint/parser",
-  "plugins": ["react"],
-  "extends": [".eslintrc-base.json"],
-  "parserOptions": {
-    "ecmaVersion": 2020,
-    "sourceType": "module",
-    "ecmaFeatures": {
-      "jsx": true
-    }
-  },
   "env": {
     "browser": true,
     "node": true,
@@ -17,5 +7,188 @@
     "jest": true,
     "es2020": true,
     "commonjs": true
-  }
+  },
+  "plugins": [
+    "react",
+    "prettier",
+    "@typescript-eslint",
+    "eslint-comments",
+    "promise",
+    "testing-library",
+    "jest-dom",
+    "jsx-a11y",
+    "simple-import-sort",
+    "react-func"
+  ],
+  "extends": [
+    "airbnb-typescript/base",
+    "plugin:eslint-comments/recommended",
+    "plugin:jest/recommended",
+    "plugin:promise/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "prettier",
+    "plugin:testing-library/react",
+    "plugin:react-hooks/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:prettier/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript"
+  ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2021,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "impliedStrict": true,
+      "modules": true
+    },
+    "project": "./tsconfig.json"
+  },
+  "overrides": [
+    {
+      "files": ["*.tsx"],
+      "rules": {
+        "max-lines-per-function": "off"
+      }
+    }
+  ],
+  "rules": {
+    "prettier/prettier": 1,
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "warn", // or error
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_",
+        "caughtErrorsIgnorePattern": "^_"
+      }
+    ],
+    "comma-dangle": "off",
+    "no-underscore-dangle": ["error", { "allow": ["_id"] }],
+    "indent": ["error", 2],
+    "no-spaced-func": 2,
+    "linebreak-style": ["error", "unix"],
+    "curly": ["error"],
+    "no-else-return": ["error"],
+    "quotes": [
+      "error",
+      "single",
+      {
+        "allowTemplateLiterals": true
+      }
+    ],
+    "semi": [
+      2,
+      "always",
+      {
+        "omitLastInOneLineBlock": true
+      }
+    ],
+    "no-extra-semi": 2,
+    "no-cond-assign": ["error", "always"],
+    "@typescript-eslint/no-namespace": "off",
+    "@typescript-eslint/interface-name-prefix": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "no-prototype-builtins": "off",
+    "import/prefer-default-export": "off",
+    "import/no-default-export": "error",
+    "react/destructuring-assignment": "off",
+    "no-use-before-define": [
+      "off",
+      { "functions": false, "classes": true, "variables": true }
+    ],
+    "@typescript-eslint/explicit-function-return-type": [
+      "error",
+      { "allowExpressions": true, "allowTypedFunctionExpressions": true }
+    ],
+    "@typescript-eslint/no-use-before-define": [
+      "error",
+      {
+        "functions": false,
+        "classes": true,
+        "variables": true,
+        "typedefs": true
+      }
+    ],
+    "unicorn/prevent-abbreviations": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/prop-types": "off",
+    "react/forbid-prop-types": "off",
+    "eslint-comments/disable-enable-pair": [
+      "error",
+      { "allowWholeFile": true }
+    ],
+    "no-console": "off",
+    "import/no-extraneous-dependencies": [2, { "devDependencies": true }],
+    "testing-library/await-async-query": "error",
+    "testing-library/no-await-sync-query": "error",
+    "testing-library/no-debugging-utils": "warn",
+    "jest-dom/prefer-checked": "error",
+    "jest-dom/prefer-enabled-disabled": "error",
+    "jest-dom/prefer-required": "error",
+    "jest-dom/prefer-to-have-attribute": "error",
+    "max-lines-per-function": [
+      "warn",
+      { "max": 50, "skipBlankLines": true, "skipComments": true }
+    ],
+    "react/jsx-filename-extension": [1, { "extensions": [".tsx", ".jsx"] }],
+    "import/extensions": ["error", "never"],
+    "import/no-unresolved": 2,
+    "simple-import-sort/imports": "off",
+    "simple-import-sort/exports": "warn",
+    "sort-imports": "off",
+    "import/order": "off",
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": "error",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "react/jsx-curly-newline": "off",
+    "react-func/max-lines-per-function": ["warn", 200]
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
+          ".ts",
+          ".tsx",
+          ".test.ts",
+          ".test.tsx",
+          ".js",
+          ".android.js",
+          ".ios.js",
+          ".ts",
+          ".android.ts",
+          ".ios.ts"
+        ]
+      }
+    }
+  },
+  "ignorePatterns": [
+    "/node_modules/**",
+    "/.git/**",
+    "/.vscode/**",
+    "/build/**",
+    "/coverage/**",
+    "/docs/**",
+    "/jsdoc/**",
+    "/templates/**",
+    "/tests/bench/**",
+    "/tests/fixtures/**",
+    "/tests/performance/**",
+    "/tmp/**",
+    "/tools/internal-rules/node_modules/**",
+    "!.eslintrc.js",
+    "prettier.config.js",
+    "/src/reportWebVitals.ts",
+    ".gitignore"
+  ]
 }
