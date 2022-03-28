@@ -1,7 +1,8 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { PRICE_PER_ITEM } from '../../../constants';
+import { PRICE_PER_ITEM, SERVER_URL } from '../../../constants';
 import { useOrderDetails } from '../../../context/OrderDetails';
+import { formatCurrency } from '../../../util';
 import { AlertBanner } from '../../common/AlertBanner';
 import style from './Options.module.scss';
 import { ScoopComp, ScoopData } from './Scoop';
@@ -43,7 +44,7 @@ const Options = (props: Option): React.ReactElement => {
 
   // optionType is 'scoops' or 'toppings'
   useEffect(() => {
-    const url = `${process.env.REACT_APP_SERVER_URL as string}${optionType}`;
+    const url = SERVER_URL.get[optionType];
     axios
       .get(url)
       .then((response: { data: ScoopData[] | ToppingData[] }) =>
@@ -66,7 +67,7 @@ const Options = (props: Option): React.ReactElement => {
   return (
     <div className={style.container}>
       <h2 className={style.title}>{title}</h2>
-      <p>{pricePerItem} each</p>
+      <p>{formatCurrency(pricePerItem)} each</p>
       <p>
         {title} total:{' '}
         {orderDetails && orderDetails.totals && orderDetails.totals[optionType]}

@@ -1,42 +1,42 @@
 import React from 'react';
-import style from './Scoop.module.scss';
+import { SERVER_URL } from '../../../../constants';
+import style from './Topping.module.scss';
 
-export interface Scoop {
+export interface Topping {
   name: string;
   imagePath: string;
   updateItemCount: (itemName: string, newItemCount: string) => void;
 }
 
-export interface ScoopData {
+export interface ToppingData {
   name: string;
   imagePath: string;
 }
 
-const ScoopComp = (props: Scoop): React.ReactElement => {
+const ToppingComp = (props: Topping): React.ReactElement => {
   const { name, imagePath, updateItemCount } = props;
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
-    updateItemCount(name, event.target.value);
+    updateItemCount(name, event.target.checked ? '1' : '0');
   };
 
   return (
     <div className={style.container}>
       <span className={style.name}>{name}</span>
       <img
-        src={`${process.env.REACT_APP_SERVER_URL as string}${imagePath}`}
-        alt={`${name} scoop`}
+        src={`${SERVER_URL.base}${imagePath}`}
+        alt={`${name} topping`}
         className={style.image}
       />
       <form className={style.form}>
         <label className={style.label}>
           <input
-            type="number"
-            defaultValue={0}
-            className={style.count}
+            type="checkbox"
+            defaultChecked={false}
+            className={style.checkbox}
             onChange={handleChange}
             name={name}
             aria-label={name}
-            role="spinbutton"
           />
         </label>
       </form>
@@ -44,4 +44,4 @@ const ScoopComp = (props: Scoop): React.ReactElement => {
   );
 };
 
-export { ScoopComp };
+export { ToppingComp };

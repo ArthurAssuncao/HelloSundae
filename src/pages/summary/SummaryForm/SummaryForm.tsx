@@ -1,11 +1,22 @@
 import React, { useRef, useState } from 'react';
 import style from './SummaryForm.module.css';
 
-const SummaryForm = (): React.ReactElement => {
+interface SummaryFormProps {
+  onFinished: () => void;
+}
+
+const SummaryForm = (props: SummaryFormProps): React.ReactElement => {
   const dialogRef = useRef(null);
   const [showDialog, setShowDialog] = useState(false);
   const [checkboxCheck, setCheckboxCheck] = useState(false);
   let timeoutDialog: ReturnType<typeof setTimeout> | null;
+
+  const { onFinished } = props;
+
+  const handleFinished = (event: React.FormEvent<EventTarget>): void => {
+    event.preventDefault();
+    onFinished();
+  };
 
   const dialogToggle = (value: boolean): void => {
     if (timeoutDialog) {
@@ -27,7 +38,7 @@ const SummaryForm = (): React.ReactElement => {
   };
 
   return (
-    <form className={style.container}>
+    <form className={style.container} onSubmit={handleFinished}>
       <div className={style.fields}>
         <input
           type="checkbox"

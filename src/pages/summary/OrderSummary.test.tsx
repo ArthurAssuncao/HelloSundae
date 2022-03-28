@@ -1,16 +1,16 @@
-import { cleanup, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 // import userEvent from '@testing-library/user-event';
 import { OrderSummary } from './OrderSummary';
 
+describe('<OrderSummary />', () => {
+  // afterEach(cleanup);
 
+  it('Summary text was rendered', () => {
+    const spySetOrderPhase = jest.fn();
+    render(<OrderSummary setOrderPhase={spySetOrderPhase} />);
 
-describe ('<OrderSummary />', () => {
-  afterEach(cleanup);
-
-  it ('Summary text was rendered', () => {
-    render (<OrderSummary />);
-    const summaryText = screen.queryByText ('Order Summary');
-    expect (summaryText).toBeInTheDocument ();
+    const summaryText = screen.queryByText('Order Summary');
+    expect(summaryText).toBeInTheDocument();
   });
   // Scoops value was rendered correctly
   // it ('Scoops value was rendered correctly', () => {
@@ -24,8 +24,4 @@ describe ('<OrderSummary />', () => {
   // Toppings value has a right value
   // Toppings list was rendered
   // Total value
-
-  
-
 });
-

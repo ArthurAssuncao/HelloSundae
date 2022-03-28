@@ -65,7 +65,8 @@ describe('Total updates', () => {
   });
 
   test('grand total starts at $0.00', async () => {
-    renderWithContext(<OrderEntry />);
+    const spySetOrderPhase = jest.fn();
+    renderWithContext(<OrderEntry setOrderPhase={spySetOrderPhase} />);
 
     const grandTotal = screen.getByRole('heading', {
       name: /grand total: \$/i,
@@ -80,7 +81,8 @@ describe('Total updates', () => {
   });
 
   test('grand total updates properly if scoop is added first', async () => {
-    renderWithContext(<OrderEntry />);
+    const spySetOrderPhase = jest.fn();
+    renderWithContext(<OrderEntry setOrderPhase={spySetOrderPhase} />);
 
     const grandTotal = screen.getByRole('heading', {
       name: /grand total: \$/i,
@@ -104,7 +106,8 @@ describe('Total updates', () => {
   });
 
   test('grand total updates properly if topping is added first', async () => {
-    renderWithContext(<OrderEntry />);
+    const spySetOrderPhase = jest.fn();
+    renderWithContext(<OrderEntry setOrderPhase={spySetOrderPhase} />);
 
     const grandTotal = screen.getByRole('heading', {
       name: /grand total: \$/i,
@@ -127,7 +130,8 @@ describe('Total updates', () => {
   });
 
   test('grand total updates properly if item is removed', async () => {
-    renderWithContext(<OrderEntry />);
+    const spySetOrderPhase = jest.fn();
+    renderWithContext(<OrderEntry setOrderPhase={spySetOrderPhase} />);
 
     const grandTotal = screen.getByRole('heading', {
       name: /grand total: \$/i,

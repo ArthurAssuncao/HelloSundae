@@ -1,13 +1,14 @@
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { PRICE_PER_ITEM } from '../constants';
+import { formatCurrency } from '../util';
 
-interface OrderDetailsProviderValueParams {
+interface OrderDetailsCounts {
   scoops: Map<string, number>;
   toppings: Map<string, number>;
   totals: OptionTotals;
 }
 
-interface OrderDetailsProviderValueFunc {
+interface UpdateItemCountFunc {
   (
     itemName: string,
     newItemCount: string,
@@ -15,9 +16,13 @@ interface OrderDetailsProviderValueFunc {
   ): void;
 }
 
+interface ResetOrderFunc {
+  (): void;
+}
+
 interface OrderDetailsProviderProps {
   children: React.ReactNode;
-  value?: [OrderDetailsProviderValueParams, OrderDetailsProviderValueFunc];
+  value?: [OrderDetailsCounts, UpdateItemCountFunc, ResetOrderFunc];
 }
 
 interface OptionCountNumber {
@@ -32,21 +37,14 @@ interface OptionTotals {
 }
 
 type OptionDetailsContext = [
-  OrderDetailsProviderValueParams,
-  OrderDetailsProviderValueFunc,
+  OrderDetailsCounts,
+  UpdateItemCountFunc,
+  ResetOrderFunc,
 ];
 
-// format number as currency
-const formatCurrency = (amount: number): string => {
-  return new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'USD',
-    minimumFractionDigits: 2,
-  }).format(amount);
-};
-
 const OrderDetails = createContext<OptionDetailsContext>([
-  {} as OrderDetailsProviderValueParams,
+  {} as OrderDetailsCounts,
+  () => {},
   () => {},
 ]);
 
@@ -104,10 +102,14 @@ const OrderDetailsProvider = (
     });
   }, [optionCounts]);
 
-  const value = useMemo((): [
-    OrderDetailsProviderValueParams,
-    OrderDetailsProviderValueFunc,
-  ] => {
+  const value = useMemo((): OptionDetailsContext => {
+    const resetOrder = (): void => {
+      setOptionCounts({
+        scoops: new Map<string, number>(),
+        toppings: new Map<string, number>(),
+      });
+    };
+
     const updateItemCount = (
       itemName: string,
       newItemCount: string,
@@ -124,7 +126,7 @@ const OrderDetailsProvider = (
 
     // getter: object containing option counts for scoops and toppings, subtotals and totals
     // setter: updateOptionCount
-    return [{ ...optionCounts, totals }, updateItemCount];
+    return [{ ...optionCounts, totals }, updateItemCount, resetOrder];
   }, [optionCounts, totals]);
 
   return (

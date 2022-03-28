@@ -1,21 +1,21 @@
 /* eslint-disable max-lines-per-function */
 import {
-  cleanup,
   render,
   screen,
   waitForElementToBeRemoved,
 } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import React, { MouseEvent } from 'react';
+import { MouseEvent } from 'react';
 import { SummaryForm } from './SummaryForm';
 
 // checkbox
 describe('<SummaryForm />', () => {
-  afterEach(cleanup);
+  // afterEach(cleanup);
 
   describe('Checkbox', () => {
     it('checkbox is unchecked by default and label is "I agree to Terms and Conditions"', () => {
-      render(<SummaryForm />);
+      const spyOnFinished = jest.fn();
+      render(<SummaryForm onFinished={spyOnFinished} />);
 
       const checkbox = screen.getByRole('checkbox');
       const checkboxLabel = screen.getByLabelText(
@@ -27,7 +27,8 @@ describe('<SummaryForm />', () => {
     });
 
     it('checkbox turns checked when click in checkbox', () => {
-      render(<SummaryForm />);
+      const spyOnFinished = jest.fn();
+      render(<SummaryForm onFinished={spyOnFinished} />);
 
       const checkbox = screen.getByRole('checkbox');
 
@@ -37,7 +38,8 @@ describe('<SummaryForm />', () => {
     });
 
     it('checkbox turns checked when click in label', () => {
-      render(<SummaryForm />);
+      const spyOnFinished = jest.fn();
+      render(<SummaryForm onFinished={spyOnFinished} />);
 
       const checkbox = screen.getByRole('checkbox');
       const checkboxLabel = screen.getByLabelText(
@@ -52,7 +54,8 @@ describe('<SummaryForm />', () => {
     describe('onChange()', () => {
       it('is called with the updated checked value on click', () => {
         const spy = jest.fn();
-        render(<SummaryForm />);
+        const spyOnFinished = jest.fn();
+        render(<SummaryForm onFinished={spyOnFinished} />);
 
         const checkbox = screen.getByRole('checkbox');
         checkbox.onchange = spy;
@@ -63,7 +66,8 @@ describe('<SummaryForm />', () => {
 
       it('is called when space is pressed', () => {
         const spy = jest.fn();
-        render(<SummaryForm />);
+        const spyOnFinished = jest.fn();
+        render(<SummaryForm onFinished={spyOnFinished} />);
 
         const checkbox = screen.getByRole('checkbox');
         checkbox.onchange = spy;
@@ -78,7 +82,8 @@ describe('<SummaryForm />', () => {
 
       it('is called from keys other than space', () => {
         const spy = jest.fn();
-        render(<SummaryForm />);
+        const spyOnFinished = jest.fn();
+        render(<SummaryForm onFinished={spyOnFinished} />);
 
         const checkbox = screen.getByRole('checkbox');
         checkbox.onchange = spy;
@@ -93,7 +98,8 @@ describe('<SummaryForm />', () => {
 
       it('is not called from keyboard events when disabled', () => {
         const spy = jest.fn();
-        render(<SummaryForm />);
+        const spyOnFinished = jest.fn();
+        render(<SummaryForm onFinished={spyOnFinished} />);
 
         const checkbox = screen.getByRole('checkbox');
         checkbox.setAttribute('disabled', 'disabled');
@@ -107,7 +113,8 @@ describe('<SummaryForm />', () => {
 
       it('is not called from click events when disabled', () => {
         const spy = jest.fn();
-        render(<SummaryForm />);
+        const spyOnFinished = jest.fn();
+        render(<SummaryForm onFinished={spyOnFinished} />);
 
         const checkbox = screen.getByRole('checkbox');
         checkbox.setAttribute('disabled', 'disabled');
@@ -123,7 +130,8 @@ describe('<SummaryForm />', () => {
     describe('onFocus()', () => {
       it('sets focus when tab is clicked', () => {
         const spy = jest.fn();
-        render(<SummaryForm />);
+        const spyOnFinished = jest.fn();
+        render(<SummaryForm onFinished={spyOnFinished} />);
 
         const checkbox = screen.getByRole('checkbox');
         checkbox.onchange = spy;
@@ -136,7 +144,8 @@ describe('<SummaryForm />', () => {
 
     describe('disabled', () => {
       it('can not change to checked when disabled and click in checkbox', () => {
-        render(<SummaryForm />);
+        const spyOnFinished = jest.fn();
+        render(<SummaryForm onFinished={spyOnFinished} />);
 
         const checkbox = screen.getByRole('checkbox');
         checkbox.setAttribute('disabled', 'disabled');
@@ -147,7 +156,8 @@ describe('<SummaryForm />', () => {
       });
 
       it('can not change to checked when disabled and click in label', () => {
-        render(<SummaryForm />);
+        const spyOnFinished = jest.fn();
+        render(<SummaryForm onFinished={spyOnFinished} />);
 
         const checkbox = screen.getByRole('checkbox');
         const checkboxLabel = screen.getByLabelText(
@@ -164,7 +174,9 @@ describe('<SummaryForm />', () => {
 
     describe('helpText / title', () => {
       it('Has helpText/title', () => {
-        render(<SummaryForm />);
+        const spyOnFinished = jest.fn();
+        render(<SummaryForm onFinished={spyOnFinished} />);
+
         const checkbox = screen.getByRole('checkbox');
         expect(checkbox).toHaveProperty('title');
       });
@@ -173,7 +185,9 @@ describe('<SummaryForm />', () => {
 
   describe('Label dialog', () => {
     it('Terms and Condition dialog appears on hover and disappear after 500ms on unhover in checkbox label', async () => {
-      render(<SummaryForm />);
+      const spyOnFinished = jest.fn();
+      render(<SummaryForm onFinished={spyOnFinished} />);
+
       // const checkbox = screen.getByRole('checkbox');
       const internSpan = screen.getByText('Terms and Conditions');
 
@@ -210,7 +224,9 @@ describe('<SummaryForm />', () => {
       spy.mockImplementation((event: MouseEvent) => {
         event.preventDefault();
       });
-      render(<SummaryForm />);
+      const spyOnFinished = jest.fn();
+      render(<SummaryForm onFinished={spyOnFinished} />);
+
       const button = screen.getByRole('button', { name: /Confirm order/i });
       button.removeAttribute('disabled');
 
@@ -227,7 +243,9 @@ describe('<SummaryForm />', () => {
       spy.mockImplementation((event: MouseEvent) => {
         event.preventDefault();
       });
-      render(<SummaryForm />);
+      const spyOnFinished = jest.fn();
+      render(<SummaryForm onFinished={spyOnFinished} />);
+
       const button = screen.getByRole('button', { name: /Confirm order/i });
 
       expect(button).toBeDisabled();
@@ -243,7 +261,9 @@ describe('<SummaryForm />', () => {
       spy.mockImplementation((event: MouseEvent) => {
         event.preventDefault();
       });
-      render(<SummaryForm />);
+      const spyOnFinished = jest.fn();
+      render(<SummaryForm onFinished={spyOnFinished} />);
+
       const checkbox = screen.getByRole('checkbox');
       const button = screen.getByRole('button', { name: /Confirm order/i });
 

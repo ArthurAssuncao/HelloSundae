@@ -60,7 +60,9 @@
     }
   ],
   "rules": {
-    "prettier/prettier": 1,
+    "prettier/prettier": ["warn"],
+    "arrow-body-style": "off",
+    "prefer-arrow-callback": "off",
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": [
       "warn", // or error
@@ -77,15 +79,18 @@
     "linebreak-style": ["error", "unix"],
     "curly": ["error"],
     "no-else-return": ["error"],
+    "jest/no-focused-tests": "warn",
     "quotes": [
       "warn",
       "single",
       {
-        "allowTemplateLiterals": true
+        "allowTemplateLiterals": true,
+        "avoidEscape": true
       }
     ],
+    "jsx-quotes": ["warn", "prefer-double"],
     "semi": [
-      1,
+      "warn",
       "always",
       {
         "omitLastInOneLineBlock": true
@@ -100,10 +105,7 @@
     "import/prefer-default-export": "off",
     "import/no-default-export": "error",
     "react/destructuring-assignment": "off",
-    "no-use-before-define": [
-      "off",
-      { "functions": false, "classes": true, "variables": true }
-    ],
+    "no-use-before-define": ["off", { "functions": false, "classes": true, "variables": true }],
     "@typescript-eslint/explicit-function-return-type": [
       "error",
       { "allowExpressions": true, "allowTypedFunctionExpressions": true }
@@ -121,10 +123,7 @@
     "react/jsx-props-no-spreading": "off",
     "react/prop-types": "off",
     "react/forbid-prop-types": "off",
-    "eslint-comments/disable-enable-pair": [
-      "error",
-      { "allowWholeFile": true }
-    ],
+    "eslint-comments/disable-enable-pair": ["error", { "allowWholeFile": true }],
     "no-console": "off",
     "import/no-extraneous-dependencies": [2, { "devDependencies": true }],
     "testing-library/await-async-query": "error",
@@ -134,10 +133,7 @@
     "jest-dom/prefer-enabled-disabled": "error",
     "jest-dom/prefer-required": "error",
     "jest-dom/prefer-to-have-attribute": "error",
-    "max-lines-per-function": [
-      "warn",
-      { "max": 50, "skipBlankLines": true, "skipComments": true }
-    ],
+    "max-lines-per-function": ["warn", { "max": 50, "skipBlankLines": true, "skipComments": true }],
     "react/jsx-filename-extension": [1, { "extensions": [".tsx", ".jsx"] }],
     "import/extensions": ["error", "never"],
     "import/no-unresolved": 2,
