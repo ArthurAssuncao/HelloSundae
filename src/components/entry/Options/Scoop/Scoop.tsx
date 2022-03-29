@@ -7,6 +7,7 @@ export interface Scoop {
   name: string;
   imagePath: string;
   updateItemCount: (itemName: string, newItemCount: string) => void;
+  className?: string;
 }
 
 export interface ScoopData {
@@ -15,7 +16,7 @@ export interface ScoopData {
 }
 
 const ScoopComp = (props: Scoop): React.ReactElement => {
-  const { name, imagePath, updateItemCount } = props;
+  const { name, imagePath, updateItemCount, className } = props;
   const [scoopValue, setScoopValue] = React.useState('0');
   const [isValid, setIsValid] = React.useState(true);
 
@@ -39,21 +40,14 @@ const ScoopComp = (props: Scoop): React.ReactElement => {
   };
 
   return (
-    <div className={style.container}>
+    <div className={classNames(className, style.container)}>
       <span className={style.name}>{name}</span>
-      <img
-        src={`${SERVER_URL.base}${imagePath}`}
-        alt={`${name} scoop`}
-        className={style.image}
-      />
+      <img src={`${SERVER_URL.base}${imagePath}`} alt={`${name} scoop`} className={style.image} />
       <form className={style.form}>
         <label className={style.label}>
           <input
             type="number"
-            className={classNames(
-              style.count,
-              isValid ? style['is-valid'] : style['is-invalid'],
-            )}
+            className={classNames(style.count, isValid ? style['is-valid'] : style['is-invalid'])}
             onChange={handleChange}
             name={name}
             aria-label={name}

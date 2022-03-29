@@ -1,3 +1,20 @@
+@import '../../../assets/sass/resources';
+
 .container {
   display: flex;
+  flex-direction: column;
+
+  .title {
+    margin-top: 2rem;
+  }
+
+  .price,
+  .total {
+    font-size: $text-description;
+    margin-top: 0.5rem;
+  }
+
+  .optionsItems {
+    margin-top: 2rem;
+  }
 }

@@ -36,6 +36,7 @@ const Options = (props: Option): React.ReactElement => {
         name={item.name}
         imagePath={item.imagePath}
         updateItemCount={orderDetails ? updateItemCountFunc : () => {}}
+        className={style.optionType}
       />
     );
   });
@@ -58,8 +59,8 @@ const Options = (props: Option): React.ReactElement => {
   return (
     <div className={style.container}>
       <h2 className={style.title}>{title}</h2>
-      <p>{formatCurrency(pricePerItem)} each</p>
-      <p>
+      <p className={style.price}>{formatCurrency(pricePerItem)} each</p>
+      <p className={style.total}>
         {title} total: {orderDetails && orderDetails.totals && orderDetails.totals[optionType]}
       </p>
       <div className={style.optionsItems}>{optionItems}</div>
