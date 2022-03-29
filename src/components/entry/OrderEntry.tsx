@@ -3,7 +3,9 @@ import { toast, ToastContainer } from 'react-toastify';
 import { useOrderDetails } from '../../context/OrderDetails';
 import { formatCurrency } from '../../util';
 import { OrderPhases } from '../App/App';
+import { Button } from '../ui/Button';
 import { Options } from './Options';
+import style from './OrderEntry.module.scss';
 
 interface OrderEntryProps {
   setOrderPhase: (orderPhase: OrderPhases) => void;
@@ -14,8 +16,7 @@ const OrderEntry = (props: OrderEntryProps): JSX.Element => {
   const [, setError] = useState<boolean>(false);
   const { setOrderPhase } = props;
 
-  const isOrderButtonEnabled =
-    (orderDetails?.scoops?.size || '0') > 0 ? true : false;
+  const isOrderButtonEnabled = (orderDetails?.scoops?.size || '0') > 0 ? true : false;
 
   const grandTotal = orderDetails?.totals?.grandTotal || formatCurrency(0);
 
@@ -37,18 +38,20 @@ const OrderEntry = (props: OrderEntryProps): JSX.Element => {
   };
 
   return (
-    <div>
-      <Options optionType="scoops" />
-      <Options optionType="toppings" />
-      <h2>Grand Total: {grandTotal}</h2>
-      <button
+    <div className={style.container}>
+      <h1 className={style.title}>Design Your Sundae</h1>
+      <Options optionType="scoops" className={style.scoops} />
+      <Options optionType="toppings" className={style.toppings} />
+      <h2 className={style.grandTotal}>Grand Total: {grandTotal}</h2>
+      <Button
         type="submit"
-        aria-label="Order Sundae"
+        ariaLabel="Order Sundae"
         onClick={onSubmit}
         disabled={!isOrderButtonEnabled}
+        className={style.button}
       >
         Order Sundae!
-      </button>
+      </Button>
       <ToastContainer
         position="top-center"
         autoClose={5000}

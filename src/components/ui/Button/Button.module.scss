@@ -1,0 +1,23 @@
+@import '../../../assets/sass/resources';
+
+.container {
+  display: flex;
+
+  background-color: $color-primary;
+
+  padding: 1rem 2rem;
+  width: 20rem;
+
+  color: $color-white;
+  font-weight: bold;
+
+  font-size: $text-body;
+
+  border-radius: 1rem;
+
+  transition: background-color 0.5s ease-in-out;
+
+  &:hover {
+    background-color: $color-green;
+  }
+}

@@ -1,0 +1,32 @@
+$color-background-alpha: rgba(111, 206, 210, 10%);
+$color-primary: #6fced2;
+
+$color-white: #fff;
+$color-bg: #f1fafb;
+$color-blue: #6fced2;
+$color-yellow: #f6de7e;
+$color-pink: #f37da0;
+$color-green: #6af59c;
+$color-purple: #ebbbed;
+$color-orange: #f49381;
+$color-light-gray: #ccc;
+$color-dark-gray: #999;
+$color-text: #555;
+
+:root,
+:root body[data-theme='light'] {
+  --color-background-alpha: #{$color-background-alpha};
+  --color-primary: #{$color-primary};
+
+  --color-white: #{$color-white};
+  --color-bg: #{$color-bg};
+  --color-blue: #{$color-blue};
+  --color-yellow: #{$color-yellow};
+  --color-pink: #{$color-pink};
+  --color-green: #{$color-green};
+  --color-purple: #{$color-purple};
+  --color-orange: #{$color-orange};
+  --color-light-gray: #{$color-light-gray};
+  --color-dark-gray: #{$color-dark-gray};
+  --color-text: #{$color-text};
+}

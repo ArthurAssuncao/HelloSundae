@@ -60,9 +60,10 @@
 
 ## :clap: Melhorias realizadas no projeto original
 
-- :star2: Interface totalmente remodelada com cores bonitas;
+- :up: Interface totalmente remodelada com cores bonitas;
 - :star2: Criado um Logo para o projeto;
-- :star2: Código css responsivo;
+- :wrench: Código css responsivo;
+- :star2: Adicionei suporte a SASS;
 - :wrench: Alteração do nome e cores, ambos pensados e criados por mim ([@arthurassuncao](http://github.com/arthurAssuncao));
 - :up: Uso de componentização;
 - :up: Criados mais testes baseados em artigos e em testes do [Polaris React](https://github.com/Shopify/polaris-react);

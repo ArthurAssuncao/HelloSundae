@@ -20,11 +20,7 @@ const App = (): React.ReactElement => {
 
   return (
     <div className="App">
-      <img
-        src={logo}
-        alt="Logo do Hello Sundae"
-        aria-label="Logo do Hello Sundae"
-      />
+      <img src={logo} alt="Logo do Hello Sundae" aria-label="Logo do Hello Sundae" />
       <OrderDetailsProvider>
         {/* summary page and entry page need provider */}
         <Component setOrderPhase={setOrderPhase} />

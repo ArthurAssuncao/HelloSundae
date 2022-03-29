@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import App from '../pages/App';
+import App from '../components/App';
 
 describe('Order Phases for happy path', () => {
   test('Order Phase happy path working', async () => {

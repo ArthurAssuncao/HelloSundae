@@ -10,6 +10,7 @@ import { ToppingComp, ToppingData } from './Topping';
 
 interface Option {
   optionType: 'scoops' | 'toppings';
+  className?: string;
 }
 
 const Options = (props: Option): React.ReactElement => {
@@ -24,10 +25,7 @@ const Options = (props: Option): React.ReactElement => {
 
   const pricePerItem = PRICE_PER_ITEM[optionType];
 
-  const updateItemCountFunc = (
-    itemName: string,
-    newItemCount: string,
-  ): void => {
+  const updateItemCountFunc = (itemName: string, newItemCount: string): void => {
     updateItemCount(itemName, newItemCount, optionType);
   };
 
@@ -47,21 +45,14 @@ const Options = (props: Option): React.ReactElement => {
     const url = SERVER_URL.get[optionType];
     axios
       .get(url)
-      .then((response: { data: ScoopData[] | ToppingData[] }) =>
-        setItems(response.data),
-      )
+      .then((response: { data: ScoopData[] | ToppingData[] }) => setItems(response.data))
       .catch((_error) => {
         setError(true);
       });
   }, [optionType]);
 
   if (error) {
-    return (
-      <AlertBanner
-        message="An error occurred. Please try again later."
-        variant="danger"
-      />
-    );
+    return <AlertBanner message="An error occurred. Please try again later." variant="danger" />;
   }
 
   return (
@@ -69,8 +60,7 @@ const Options = (props: Option): React.ReactElement => {
       <h2 className={style.title}>{title}</h2>
       <p>{formatCurrency(pricePerItem)} each</p>
       <p>
-        {title} total:{' '}
-        {orderDetails && orderDetails.totals && orderDetails.totals[optionType]}
+        {title} total: {orderDetails && orderDetails.totals && orderDetails.totals[optionType]}
       </p>
       <div className={style.optionsItems}>{optionItems}</div>
     </div>
