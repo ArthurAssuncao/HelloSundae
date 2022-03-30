@@ -26,6 +26,7 @@ $height: 2.4rem;
     padding: 0.5rem;
     font-size: $text-description;
     width: calc($height * 1.6);
+    text-align: center;
 
     -webkit-appearance: textfield;
     -moz-appearance: textfield;
@@ -47,7 +48,7 @@ $height: 2.4rem;
     justify-content: center;
     width: $height;
     height: $height;
-    padding: 0;
+    padding: 0.2rem;
     margin: 0;
     border: none;
     background: none;
