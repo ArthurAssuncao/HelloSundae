@@ -22,4 +22,13 @@
   &:hover {
     background-color: $color-green;
   }
+
+  &:disabled {
+    background-color: $color-light-gray;
+
+    &:hover {
+      background-color: $color-light-gray;
+      cursor: not-allowed;
+    }
+  }
 }

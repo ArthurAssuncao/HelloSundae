@@ -3,15 +3,17 @@
 .container {
   display: flex;
   flex-direction: column;
-
-  .title {
-    margin-top: 2rem;
-  }
+  margin: 1rem 0;
 
   .price,
   .total {
     font-size: $text-description;
     margin-top: 0.5rem;
+    color: $color-dark-gray;
+  }
+
+  .total {
+    margin-bottom: 1rem;
   }
 
   .optionsItems {
@@ -19,6 +21,8 @@
     flex-direction: row;
     flex-wrap: wrap;
     gap: 3rem;
-    margin-top: 2rem;
+
+    display: grid;
+    grid-template-columns: auto auto;
   }
 }

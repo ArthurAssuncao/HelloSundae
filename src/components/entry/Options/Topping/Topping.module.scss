@@ -3,8 +3,8 @@
 .container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
 
   padding: 1.5rem;
 
@@ -17,6 +17,8 @@
   .image {
     height: 9.6rem;
     margin-bottom: 1rem;
+    margin-top: 1.5rem;
+    padding-left: 1.5rem;
   }
 
   .name {
@@ -30,5 +32,6 @@
     align-items: flex-start;
     justify-content: flex-start;
     gap: 0.5rem;
+    padding-left: 1.5rem;
   }
 }
