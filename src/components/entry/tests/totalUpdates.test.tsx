@@ -17,7 +17,7 @@ describe('Total updates', () => {
 
     // update vanilla scoops to 1 and check subtotal
     const vanillaInput = await screen.findByRole('spinbutton', {
-      name: 'Vanilla',
+      name: 'Vanilla input',
     });
     userEvent.clear(vanillaInput);
     userEvent.type(vanillaInput, '1');
@@ -25,7 +25,7 @@ describe('Total updates', () => {
 
     // update chocolate scoops to 2 and check subtotal
     const chocolateInput = await screen.findByRole('spinbutton', {
-      name: 'Chocolate',
+      name: 'Chocolate input',
     });
     userEvent.clear(chocolateInput);
     userEvent.type(chocolateInput, '2');
@@ -75,7 +75,7 @@ describe('Total updates', () => {
 
     // avoid unomonted component error forcing async and await mock server response
     const chocolateInput = await screen.findByRole('spinbutton', {
-      name: 'Chocolate',
+      name: 'Chocolate input',
     });
     userEvent.clear(chocolateInput);
   });
@@ -89,7 +89,7 @@ describe('Total updates', () => {
     });
 
     const vanillaInput = await screen.findByRole('spinbutton', {
-      name: 'Vanilla',
+      name: 'Vanilla input',
     });
     userEvent.clear(vanillaInput);
     userEvent.type(vanillaInput, '1');
@@ -97,7 +97,7 @@ describe('Total updates', () => {
     expect(grandTotal).toHaveTextContent('2.00');
 
     const chocolateInput = await screen.findByRole('spinbutton', {
-      name: 'Chocolate',
+      name: 'Chocolate input',
     });
     userEvent.clear(chocolateInput);
     userEvent.type(chocolateInput, '2');
@@ -138,7 +138,7 @@ describe('Total updates', () => {
     });
 
     const vanillaInput = await screen.findByRole('spinbutton', {
-      name: 'Vanilla',
+      name: 'Vanilla input',
     });
     userEvent.clear(vanillaInput);
     userEvent.type(vanillaInput, '1');

@@ -1,0 +1,11 @@
+@import '../../assets/sass/resources';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 3rem;
+
+  background-color: $color-bg;
+}

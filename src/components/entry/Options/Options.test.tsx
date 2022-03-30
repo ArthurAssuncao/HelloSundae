@@ -40,7 +40,7 @@ describe('Scoop and Topping tests', () => {
     renderWithContext(<Options optionType="scoops" />);
 
     const vanillaInput = await screen.findByRole('spinbutton', {
-      name: 'Vanilla',
+      name: 'Vanilla input',
     });
     userEvent.clear(vanillaInput);
     userEvent.type(vanillaInput, '-1');

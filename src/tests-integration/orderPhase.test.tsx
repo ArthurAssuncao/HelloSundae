@@ -11,7 +11,7 @@ describe('Order Phases for happy path', () => {
 
     // add ice cream scoops and toppings
     const vanillaInput = await screen.findByRole('spinbutton', {
-      name: 'Vanilla',
+      name: 'Vanilla input',
     });
     userEvent.clear(vanillaInput);
     userEvent.type(vanillaInput, '1');
@@ -89,7 +89,7 @@ describe('Order Phases for happy path', () => {
     expect(toppingsTotal).toBeInTheDocument();
 
     // wait for items to appear so that Testing Library doesn't get angry about happening after test is over
-    await screen.findByRole('spinbutton', { name: 'Vanilla' });
+    await screen.findByRole('spinbutton', { name: 'Vanilla input' });
     await screen.findByRole('checkbox', { name: 'M&Ms' });
 
     // do we need to await anuthin to avoid test erros?
@@ -99,13 +99,13 @@ describe('Order Phases for happy path', () => {
     render(<App />);
 
     const vanillaInput = await screen.findByRole('spinbutton', {
-      name: 'Vanilla',
+      name: 'Vanilla input',
     });
     userEvent.clear(vanillaInput);
     userEvent.type(vanillaInput, '1');
 
     const chocolateInput = await screen.findByRole('spinbutton', {
-      name: 'Chocolate',
+      name: 'Chocolate input',
     });
     userEvent.clear(chocolateInput);
     userEvent.type(chocolateInput, '2');

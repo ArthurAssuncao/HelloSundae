@@ -32,6 +32,9 @@
     ]
   },
   "devDependencies": {
+    "@iconify/icons-bxs": "^1.2.3",
+    "@iconify/react": "^3.2.0",
+    "@iconify/types": "^1.1.0",
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",

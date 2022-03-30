@@ -4,7 +4,7 @@ import { OrderDetailsProvider } from '../../context/OrderDetails';
 import { OrderConfirmation } from '../confirmation';
 import { OrderEntry } from '../entry';
 import { OrderSummary } from '../summary';
-import './App.css';
+import style from './App.module.scss';
 
 export type OrderPhases = 'inProgress' | 'review' | 'completed';
 
@@ -19,7 +19,7 @@ const App = (): React.ReactElement => {
   const Component = components[orderPhase];
 
   return (
-    <div className="App">
+    <div className={style.container}>
       <img src={logo} alt="Logo do Hello Sundae" aria-label="Logo do Hello Sundae" />
       <OrderDetailsProvider>
         {/* summary page and entry page need provider */}

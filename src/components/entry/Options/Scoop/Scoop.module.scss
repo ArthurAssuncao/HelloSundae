@@ -1,3 +1,25 @@
+@import '../../../../assets/sass/resources';
+
 .container {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 1.5rem;
+
+  background-color: $color-white;
+
+  width: 16rem;
+
+  border-radius: 1rem;
+
+  .image {
+    height: 9.6rem;
+    margin-bottom: 1rem;
+  }
+
+  .name {
+    margin-bottom: 1rem;
+  }
 }

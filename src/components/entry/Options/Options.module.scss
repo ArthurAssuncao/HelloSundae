@@ -15,6 +15,10 @@
   }
 
   .optionsItems {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 3rem;
     margin-top: 2rem;
   }
 }

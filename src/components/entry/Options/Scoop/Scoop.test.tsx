@@ -8,7 +8,7 @@ describe('Scoop tests', () => {
     render(<ScoopComp name="test" imagePath="test" updateItemCount={spy} />);
 
     // expect input to be invalid with negative number
-    const scoopInput = screen.getByRole('spinbutton', { name: 'test' });
+    const scoopInput = screen.getByLabelText('test input');
     userEvent.clear(scoopInput);
     userEvent.type(scoopInput, '-1');
     expect(scoopInput).toHaveClass('is-invalid');

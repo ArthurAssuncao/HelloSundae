@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import React from 'react';
 import { SERVER_URL } from '../../../../constants';
+import { InputNumber } from '../../../ui/InputNumber';
 import style from './Scoop.module.scss';
 
 export interface Scoop {
@@ -20,11 +21,16 @@ const ScoopComp = (props: Scoop): React.ReactElement => {
   const [scoopValue, setScoopValue] = React.useState('0');
   const [isValid, setIsValid] = React.useState(true);
 
+  const validClass = isValid ? style['is-valid'] : style['is-invalid'];
+
+  const MAX = 10;
+  const MIN = 0;
+
   const validate = (value: string): boolean => {
     const newIsValid =
       !isNaN(Number(value)) &&
-      Number(value) >= 0 &&
-      Number(value) <= 10 &&
+      Number(value) >= MIN &&
+      Number(value) <= MAX &&
       value !== '' &&
       Math.floor(Number(value)) === Number(value);
     setIsValid(newIsValid);
@@ -41,22 +47,19 @@ const ScoopComp = (props: Scoop): React.ReactElement => {
 
   return (
     <div className={classNames(className, style.container)}>
-      <span className={style.name}>{name}</span>
       <img src={`${SERVER_URL.base}${imagePath}`} alt={`${name} scoop`} className={style.image} />
+      <span className={style.name}>{name}</span>
       <form className={style.form}>
-        <label className={style.label}>
-          <input
-            type="number"
-            className={classNames(style.count, isValid ? style['is-valid'] : style['is-invalid'])}
-            onChange={handleChange}
-            name={name}
-            aria-label={name}
-            role="spinbutton"
-            min="0"
-            max="10"
-            value={scoopValue}
-          />
-        </label>
+        <InputNumber
+          className={classNames(style.count, validClass)}
+          handleChange={handleChange}
+          name={name}
+          ariaLabel={name}
+          min={MIN}
+          max={MAX}
+          value={scoopValue}
+          isValidByExternalValidation={isValid ? 'valid' : 'invalid'}
+        />
       </form>
     </div>
   );

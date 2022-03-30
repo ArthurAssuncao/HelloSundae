@@ -43,7 +43,7 @@ describe('OrderEntry component', () => {
     renderWithContext(<OrderEntry setOrderPhase={spySetOrderPhase} />);
 
     const vanillaInput = await screen.findByRole('spinbutton', {
-      name: 'Vanilla',
+      name: 'Vanilla input',
     });
     userEvent.clear(vanillaInput);
     userEvent.type(vanillaInput, '1');
@@ -64,7 +64,7 @@ describe('OrderEntry component', () => {
     expect(buttonSubmit).toBeDisabled();
     // buttonSubmit.setAttribute('disabled', 'false');
     const vanillaInput = await screen.findByRole('spinbutton', {
-      name: 'Vanilla',
+      name: 'Vanilla input',
     });
     userEvent.clear(vanillaInput);
     userEvent.type(vanillaInput, '1');

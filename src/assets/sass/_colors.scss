@@ -10,8 +10,10 @@ $color-green: #6af59c;
 $color-purple: #ebbbed;
 $color-orange: #f49381;
 $color-light-gray: #ccc;
-$color-dark-gray: #999;
-$color-text: #555;
+$color-dark-gray: #555;
+$color-text: #333;
+
+$color-red: #ff7057;
 
 :root,
 :root body[data-theme='light'] {
@@ -29,4 +31,6 @@ $color-text: #555;
   --color-light-gray: #{$color-light-gray};
   --color-dark-gray: #{$color-dark-gray};
   --color-text: #{$color-text};
+
+  --color-red: #{$color-red};
 }
