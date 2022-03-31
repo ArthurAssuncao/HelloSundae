@@ -1,4 +1,5 @@
 import axios from 'axios';
+import classNames from 'classnames';
 import React, { useEffect } from 'react';
 import { SERVER_URL } from '../../constants';
 import { useOrderDetails } from '../../context/OrderDetails';
@@ -9,12 +10,13 @@ import style from './OrderConfirmation.module.scss';
 
 interface OrderConfirmationProps {
   setOrderPhase: (orderPhase: OrderPhases) => void;
+  className?: string;
 }
 
 const OrderConfirmation = (props: OrderConfirmationProps): React.ReactElement => {
   const [, , resetOrder] = useOrderDetails();
   const [orderNumber, setOrderNumber] = React.useState<number | null>(null);
-  const { setOrderPhase } = props;
+  const { setOrderPhase, className } = props;
   const [error, setError] = React.useState<boolean>(false);
 
   const handleClick = (): void => {
@@ -52,7 +54,7 @@ const OrderConfirmation = (props: OrderConfirmationProps): React.ReactElement =>
   }
 
   return (
-    <main className={style.container}>
+    <main className={classNames(style.container, className)}>
       <h1 className={style.title}>Thank You!</h1>
       <p className={style.orderNumberMsg}>
         Your order number is <span className={style.orderNumber}>{orderNumber}</span>

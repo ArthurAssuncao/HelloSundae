@@ -4,6 +4,7 @@ import { OrderDetailsProvider } from '../../context/OrderDetails';
 import { OrderConfirmation } from '../confirmation';
 import { OrderEntry } from '../entry';
 import { OrderSummary } from '../summary';
+import { IphoneXMockup } from '../ui/IphoneXMockup';
 import style from './App.module.scss';
 
 export type OrderPhases = 'inProgress' | 'review' | 'completed';
@@ -19,7 +20,7 @@ const App = (): React.ReactElement => {
   const Component = components[orderPhase];
 
   return (
-    <div className={style.container}>
+    <IphoneXMockup className={style.container}>
       <img
         src={logo}
         alt="Logo do Hello Sundae"
@@ -28,9 +29,9 @@ const App = (): React.ReactElement => {
       />
       <OrderDetailsProvider>
         {/* summary page and entry page need provider */}
-        <Component setOrderPhase={setOrderPhase} />
+        <Component setOrderPhase={setOrderPhase} className={style.main} />
       </OrderDetailsProvider>
-    </div>
+    </IphoneXMockup>
   );
 };
 

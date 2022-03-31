@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import { useState } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 import { useOrderDetails } from '../../context/OrderDetails';
@@ -9,12 +10,13 @@ import style from './OrderEntry.module.scss';
 
 interface OrderEntryProps {
   setOrderPhase: (orderPhase: OrderPhases) => void;
+  className?: string;
 }
 
 const OrderEntry = (props: OrderEntryProps): JSX.Element => {
   const [orderDetails] = useOrderDetails();
   const [, setError] = useState<boolean>(false);
-  const { setOrderPhase } = props;
+  const { setOrderPhase, className } = props;
 
   const isOrderButtonEnabled = (orderDetails?.scoops?.size || '0') > 0 ? true : false;
 
@@ -38,7 +40,7 @@ const OrderEntry = (props: OrderEntryProps): JSX.Element => {
   };
 
   return (
-    <div className={style.container}>
+    <main className={classNames(style.container, className)}>
       <h1 className={style.title}>Design Your Sundae</h1>
       <Options optionType="scoops" className={style.scoops} />
       <Options optionType="toppings" className={style.toppings} />
@@ -63,7 +65,7 @@ const OrderEntry = (props: OrderEntryProps): JSX.Element => {
         draggable
         pauseOnHover
       />
-    </div>
+    </main>
   );
 };
 

@@ -1,0 +1,1 @@
+export { IphoneXMockup } from './IphoneXMockup';

@@ -61,7 +61,7 @@ describe('Order Confirmation tests', () => {
     const spySetOrderPhase = jest.fn();
     render(<OrderConfirmation setOrderPhase={spySetOrderPhase} />);
 
-    const orderNumber = await screen.findByText(/Your order number is 123456789/i);
+    const orderNumber = await screen.findByText(/123456789/i);
     expect(orderNumber).toBeInTheDocument();
     server.resetHandlers();
   });

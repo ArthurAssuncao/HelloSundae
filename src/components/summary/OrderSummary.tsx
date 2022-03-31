@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import { useOrderDetails } from '../../context/OrderDetails';
 import { formatCurrency } from '../../util';
 import { OrderPhases } from '../App/App';
@@ -6,6 +7,7 @@ import { SummaryForm } from './SummaryForm';
 
 interface OrderSummaryProps {
   setOrderPhase: (orderPhase: OrderPhases) => void;
+  className?: string;
 }
 
 interface OptionProps {
@@ -13,7 +15,7 @@ interface OptionProps {
 }
 
 const OrderSummary = (props: OrderSummaryProps): JSX.Element => {
-  const { setOrderPhase } = props;
+  const { setOrderPhase, className } = props;
   const [orderDetails] = useOrderDetails();
 
   const scoopsTotal = orderDetails?.totals?.scoops || formatCurrency(0);
@@ -81,7 +83,7 @@ const OrderSummary = (props: OrderSummaryProps): JSX.Element => {
   };
 
   return (
-    <main className={style.container}>
+    <main className={classNames(style.container, className)}>
       <h1 className={style.title}>Order Summary</h1>
 
       <Scoops className={style.scoops} />
