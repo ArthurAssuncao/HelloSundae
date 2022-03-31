@@ -1,10 +1,46 @@
 // abstracts
 @import './colors';
 
+:root,
+:root body[data-theme='light'] {
+  --color-background-alpha: #{$color-background-alpha};
+  --color-primary: #{$color-primary};
+
+  --color-white: #{$color-white};
+  --color-bg: #{$color-bg};
+  --color-blue: #{$color-blue};
+  --color-yellow: #{$color-yellow};
+  --color-pink: #{$color-pink};
+  --color-green: #{$color-green};
+  --color-purple: #{$color-purple};
+  --color-orange: #{$color-orange};
+  --color-light-gray: #{$color-light-gray};
+  --color-dark-gray: #{$color-dark-gray};
+  --color-text: #{$color-text};
+
+  --color-red: #{$color-red};
+}
+
 // reset
 @import './reset';
 
 @import './sizes';
+
+:root,
+:root body[data-theme='light'] {
+  --text-html: #{$text-html};
+
+  --text-h1: #{$text-h1};
+  --text-h2: #{$text-h2};
+  --text-h3: #{$text-h3};
+  --text-h4: #{$text-h4};
+  --text-h5: #{$text-h5};
+  --text-h6: #{$text-h6};
+  --text-body: #{$text-body};
+  --text-description: #{$text-description};
+  --text-caption: #{$text-caption};
+  --text-small: #{$text-small};
+}
 
 // base
 @import './base';

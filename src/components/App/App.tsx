@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { useState } from 'react';
 import logo from '../../assets/icons/hello-sundae-w-text.png';
 import { OrderDetailsProvider } from '../../context/OrderDetails';
@@ -21,12 +22,17 @@ const App = (): React.ReactElement => {
 
   return (
     <IphoneXMockup className={style.container}>
-      <img
-        src={logo}
-        alt="Logo do Hello Sundae"
-        aria-label="Logo do Hello Sundae"
-        className={style.logo}
-      />
+      <div className={style.logoWrapper}>
+        <div className={style.logoWrapperIntern}>
+          <Image
+            src={logo}
+            alt="Logo do Hello Sundae"
+            aria-label="Logo do Hello Sundae"
+            className={style.logo}
+            layout="fill"
+          />
+        </div>
+      </div>
       <OrderDetailsProvider>
         {/* summary page and entry page need provider */}
         <Component setOrderPhase={setOrderPhase} className={style.main} />

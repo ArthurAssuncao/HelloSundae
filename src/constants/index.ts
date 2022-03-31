@@ -4,12 +4,12 @@ export const PRICE_PER_ITEM = {
 };
 
 export const SERVER_URL = {
-  base: `${process.env.REACT_APP_SERVER_URL as string}`,
+  base: `${process.env.NEXT_PUBLIC_SERVER_URL as string}`,
   get: {
-    scoops: `${process.env.REACT_APP_SERVER_URL as string}scoops`,
-    toppings: `${process.env.REACT_APP_SERVER_URL as string}toppings`,
+    scoops: `${process.env.NEXT_PUBLIC_SERVER_URL_API as string}/scoops`,
+    toppings: `${process.env.NEXT_PUBLIC_SERVER_URL_API as string}/toppings`,
   },
   post: {
-    order: `${process.env.REACT_APP_SERVER_URL as string}order`,
+    order: `${process.env.NEXT_PUBLIC_SERVER_URL_API as string}/order`,
   },
 };

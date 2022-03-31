@@ -23,143 +23,146 @@ $width: 300px;
 .iphoneX {
   padding: 1rem;
   height: 100vh;
+  width: 100%;
+  overflow: auto;
 }
 
-@media (min-width: 768px) {
+
 .iphoneX {
-  position: relative;
-  margin: 20px auto;
-  margin-left: 20px;
-  width: $width;
-  height: 95vh;
-  max-height: 640px;
-  height: min(95vh, 640px);
-  border-radius: 30px;
-  box-shadow: 0px 0px 0px 6px #111, 0px 0px 0px 9px #191919, 0px 0px 0px 12px #102c35,
-    0px 0px 0px 13px #225e71, 0px 0px 0px 15px #999;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  padding: 0;
-
-  scrollbar-color: #999 #333;
-  -ms-overflow-style: auto;
-  scrollbar-width: thin;
-  transition: background-color 0.5s ease;
-
-  &::-webkit-scrollbar {
-    width: 0.5rem; /* Mostly for vertical scrollbars */
-    height: 0.5rem; /* Mostly for horizontal scrollbars */
-  }
-
-  &:hover {
-    &::-webkit-scrollbar-thumb {
-      background-color: $color-gray;
-    }
-  }
-
-  &::-webkit-scrollbar-thumb {
-    /* Foreground */
-    background: transparent;
+  @media (min-width: 768px) {
+    position: relative;
+    margin: 20px auto;
+    margin-left: 20px;
+    width: $width;
+    height: 95vh;
+    max-height: 640px;
+    height: min(95vh, 640px);
     border-radius: 30px;
+    box-shadow: 0px 0px 0px 6px #111, 0px 0px 0px 9px #191919, 0px 0px 0px 12px #102c35,
+      0px 0px 0px 13px #225e71, 0px 0px 0px 15px #999;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding: 0;
+
+    scrollbar-color: #999 #333;
+    -ms-overflow-style: auto;
+    scrollbar-width: thin;
     transition: background-color 0.5s ease;
-    cursor: pointer;
+
+    &::-webkit-scrollbar {
+      width: 0.5rem; /* Mostly for vertical scrollbars */
+      height: 0.5rem; /* Mostly for horizontal scrollbars */
+    }
 
     &:hover {
-      background-color: $color-gray;
+      &::-webkit-scrollbar-thumb {
+        background-color: $color-gray;
+      }
     }
-  }
 
-  &::-webkit-scrollbar-track {
-    /* Background */
-    background: transparent;
-  }
-
-  &::-webkit-scrollbar-track-piece {
-    &:end {
+    &::-webkit-scrollbar-thumb {
+      /* Foreground */
       background: transparent;
-      margin-bottom: 2.2rem;
+      border-radius: 30px;
+      transition: background-color 0.5s ease;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $color-gray;
+      }
     }
 
-    &:start {
+    &::-webkit-scrollbar-track {
+      /* Background */
       background: transparent;
-      margin-top: 2.2rem;
-    }
-  }
-
-  ::-webkit-scrollbar-corner {
-    background-color: transparent;
-  }
-
-  .deviceTop {
-    position: fixed;
-    width: $width;
-    margin-top: -10px;
-    margin-bottom: 20px;
-
-    &:before,
-    &:after {
-      content: '';
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 1;
     }
 
-    // frontal camera/speaker frame
-    &:before {
-      top: 0px;
-      width: 56%;
-      height: 24px;
-      background-color: #111;
-      border-bottom-left-radius: 2.2rem;
-      border-bottom-right-radius: 2.2rem;
+    &::-webkit-scrollbar-track-piece {
+      &:end {
+        background: transparent;
+        margin-bottom: 2.2rem;
+      }
+
+      &:start {
+        background: transparent;
+        margin-top: 2.2rem;
+      }
     }
 
-    .speaker,
-    .camera {
-      position: absolute;
-      display: block;
-      color: transparent;
-      z-index: 1;
+    ::-webkit-scrollbar-corner {
+      background-color: transparent;
     }
 
-    // speaker
-    .speaker {
-      top: 0px;
-      left: 50%;
-      transform: translate(-50%, 6px);
-      height: 6px;
-      width: 13%;
-      background-color: #101010;
-      border-radius: 6px;
-      box-shadow: inset 0px -1px 2px 0px rgba(256, 256, 256, 0.2);
-    }
+    .deviceTop {
+      position: fixed;
+      width: $width;
+      margin-top: -10px;
+      margin-bottom: 20px;
 
-    // camera
-    .camera {
-      left: 0%;
-      top: 0px;
-      transform: translate(180px, 4px);
-      width: 10px;
-      height: 10px;
-      background-color: #101010;
-      border-radius: 10px;
-      box-shadow: inset 0px -1px 2px 0px rgba(256, 256, 256, 0.2);
-
+      &:before,
       &:after {
         content: '';
         position: absolute;
-        background-color: #2d4d76;
-        width: 6px;
-        height: 6px;
-        top: 2px;
-        left: 2px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1;
+      }
 
+      // frontal camera/speaker frame
+      &:before {
+        top: 0px;
+        width: 56%;
+        height: 24px;
+        background-color: #111;
+        border-bottom-left-radius: 2.2rem;
+        border-bottom-right-radius: 2.2rem;
+      }
+
+      .speaker,
+      .camera {
+        position: absolute;
         display: block;
-        border-radius: 4px;
-        box-shadow: inset 0px -2px 2px rgba(0, 0, 0, 0.5);
+        color: transparent;
+        z-index: 1;
+      }
+
+      // speaker
+      .speaker {
+        top: 0px;
+        left: 50%;
+        transform: translate(-50%, 6px);
+        height: 6px;
+        width: 13%;
+        background-color: #101010;
+        border-radius: 6px;
+        box-shadow: inset 0px -1px 2px 0px rgba(256, 256, 256, 0.2);
+      }
+
+      // camera
+      .camera {
+        left: 0%;
+        top: 0px;
+        transform: translate(180px, 4px);
+        width: 10px;
+        height: 10px;
+        background-color: #101010;
+        border-radius: 10px;
+        box-shadow: inset 0px -1px 2px 0px rgba(256, 256, 256, 0.2);
+
+        &:after {
+          content: '';
+          position: absolute;
+          background-color: #2d4d76;
+          width: 6px;
+          height: 6px;
+          top: 2px;
+          left: 2px;
+
+          display: block;
+          border-radius: 4px;
+          box-shadow: inset 0px -2px 2px rgba(0, 0, 0, 0.5);
+        }
       }
     }
   }
-}
 }

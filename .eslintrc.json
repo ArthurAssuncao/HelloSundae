@@ -57,6 +57,12 @@
       "rules": {
         "max-lines-per-function": "off"
       }
+    },
+    {
+      "files": ["src/pages/**/*.tsx", "src/pages/**/*.ts"],
+      "rules": {
+        "import/no-default-export": "off"
+      }
     }
   ],
   "rules": {
@@ -185,6 +191,7 @@
     "!.eslintrc.js",
     "prettier.config.js",
     "/src/reportWebVitals.ts",
-    ".gitignore"
+    ".gitignore",
+    "/*.*"
   ]
 }

@@ -1,8 +1,17 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import Image from 'next/image';
 import App from '../components/App';
 
+// fix issue #26749. See more: https://github.com/vercel/next.js/issues/26749
+jest.mock('next/image');
+
 describe('Order Phases for happy path', () => {
+  beforeEach(() => {
+    (Image as jest.Mock<JSX.Element>).mockReturnValueOnce(
+      <img src="" alt="" aria-label="Logo do Hello Sundae" />,
+    );
+  });
   test('Order Phase happy path working', async () => {
     // render app
     render(<App />);

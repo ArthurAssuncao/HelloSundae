@@ -16,22 +16,4 @@ $color-text: #333;
 
 $color-red: #ff7057;
 
-:root,
-:root body[data-theme='light'] {
-  --color-background-alpha: #{$color-background-alpha};
-  --color-primary: #{$color-primary};
 
-  --color-white: #{$color-white};
-  --color-bg: #{$color-bg};
-  --color-blue: #{$color-blue};
-  --color-yellow: #{$color-yellow};
-  --color-pink: #{$color-pink};
-  --color-green: #{$color-green};
-  --color-purple: #{$color-purple};
-  --color-orange: #{$color-orange};
-  --color-light-gray: #{$color-light-gray};
-  --color-dark-gray: #{$color-dark-gray};
-  --color-text: #{$color-text};
-
-  --color-red: #{$color-red};
-}
