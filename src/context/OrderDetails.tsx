@@ -2,21 +2,17 @@ import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { PRICE_PER_ITEM } from '../constants';
 import { formatCurrency } from '../util';
 
-interface OrderDetailsCounts {
+export interface OrderDetailsCounts {
   scoops: Map<string, number>;
   toppings: Map<string, number>;
   totals: OptionTotals;
 }
 
-interface UpdateItemCountFunc {
-  (
-    itemName: string,
-    newItemCount: string,
-    optionType: 'scoops' | 'toppings',
-  ): void;
+export interface UpdateItemCountFunc {
+  (itemName: string, newItemCount: string, optionType: 'scoops' | 'toppings'): void;
 }
 
-interface ResetOrderFunc {
+export interface ResetOrderFunc {
   (): void;
 }
 
@@ -36,11 +32,7 @@ interface OptionTotals {
   grandTotal: string;
 }
 
-type OptionDetailsContext = [
-  OrderDetailsCounts,
-  UpdateItemCountFunc,
-  ResetOrderFunc,
-];
+export type OptionDetailsContext = [OrderDetailsCounts, UpdateItemCountFunc, ResetOrderFunc];
 
 const OrderDetails = createContext<OptionDetailsContext>([
   {} as OrderDetailsCounts,
@@ -53,17 +45,13 @@ const useOrderDetails = (): OptionDetailsContext => {
   const context = useContext(OrderDetails);
 
   if (context === undefined) {
-    throw new Error(
-      'useOrderDetails must be used within a OrderDetailsProvider',
-    );
+    throw new Error('useOrderDetails must be used within a OrderDetailsProvider');
   }
 
   return context;
 };
 
-const OrderDetailsProvider = (
-  props: OrderDetailsProviderProps,
-): JSX.Element => {
+const OrderDetailsProvider = (props: OrderDetailsProviderProps): JSX.Element => {
   const [optionCounts, setOptionCounts] = useState<OptionCountNumber>({
     scoops: new Map<string, number>(),
     toppings: new Map<string, number>(),
@@ -77,10 +65,7 @@ const OrderDetailsProvider = (
     grandTotal: zeroCurrency,
   });
 
-  const calculateSubtotal = (
-    orderType: string,
-    count: Map<string, number>,
-  ): number => {
+  const calculateSubtotal = (orderType: string, count: Map<string, number>): number => {
     let optionCount = 0;
     count.forEach((value) => {
       optionCount += value;
@@ -90,10 +75,7 @@ const OrderDetailsProvider = (
 
   useEffect(() => {
     const scoopsSubtotal = calculateSubtotal('scoops', optionCounts.scoops);
-    const toppingsSubtotal = calculateSubtotal(
-      'toppings',
-      optionCounts.toppings,
-    );
+    const toppingsSubtotal = calculateSubtotal('toppings', optionCounts.toppings);
     const grandTotal = scoopsSubtotal + toppingsSubtotal;
     setTotals({
       scoops: formatCurrency(scoopsSubtotal),
@@ -110,7 +92,7 @@ const OrderDetailsProvider = (
       });
     };
 
-    const updateItemCount = (
+    const updateItemCount: UpdateItemCountFunc = (
       itemName: string,
       newItemCount: string,
       optionType: 'scoops' | 'toppings',
@@ -129,11 +111,7 @@ const OrderDetailsProvider = (
     return [{ ...optionCounts, totals }, updateItemCount, resetOrder];
   }, [optionCounts, totals]);
 
-  return (
-    <OrderDetails.Provider value={value}>
-      {props.children}
-    </OrderDetails.Provider>
-  );
+  return <OrderDetails.Provider value={value}>{props.children}</OrderDetails.Provider>;
 };
 
 export { OrderDetailsProvider, useOrderDetails };

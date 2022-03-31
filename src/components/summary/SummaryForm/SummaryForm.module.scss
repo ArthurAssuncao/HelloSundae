@@ -1,0 +1,66 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  .link {
+    color: var(--color-blue);
+    cursor: pointer;
+    transition: color 0.5s ease;
+    &:hover {
+      color: var(--color-green);
+      cursor: pointer;
+    }
+  }
+  .fields {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 1.5rem 0;
+    .checkbox {
+      margin-right: 1.5rem;
+    }
+  }
+  .labelWrapper {
+    position: relative;
+    font-size: 1.2rem;
+    .tooltip {
+      position: absolute;
+      height: 10rem;
+      background: var(--color-white);
+      padding: 1rem;
+      opacity: 0.9;
+      border-radius: 1rem;
+      box-shadow: 0 0 10px var(--color-dark-gray);
+    }
+  }
+  .confirmButton {
+    margin: 1.5rem 0;
+    height: 3rem;
+    width: 16rem;
+    background-color: var(--color-blue);
+    border-radius: 1rem;
+    color: var(--color-white);
+    font-size: 1.2rem;
+    transition: background-color 0.5s ease;
+    &:disabled {
+      background-color: var(--color-light-gray);
+    }
+    &:hover {
+      background-color: var(--color-green);
+      cursor: pointer;
+    }
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    display: flex;
+    align-items: center;
+    .fields {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

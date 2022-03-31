@@ -22,8 +22,10 @@
   }
 
   .name {
+    padding-top: 0.2rem;
     margin-bottom: 1rem;
     height: 3rem;
+    font-size: $text-description;
   }
 
   .form {

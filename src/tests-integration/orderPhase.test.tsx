@@ -40,7 +40,7 @@ describe('Order Phases for happy path', () => {
     expect(toppingsHeading).toBeInTheDocument();
 
     // accept terms and conditions and click button to confirm order
-    const vanillaScoop = screen.getByText('Vanilla: 1');
+    const vanillaScoop = screen.getByText('1 Vanilla');
     const memsToppings = screen.getByText('M&Ms');
 
     expect(vanillaScoop).toBeInTheDocument();

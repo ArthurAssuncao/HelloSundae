@@ -1,30 +1,35 @@
 import { useOrderDetails } from '../../context/OrderDetails';
+import { formatCurrency } from '../../util';
 import { OrderPhases } from '../App/App';
-import style from './OrderSummary.module.css';
+import style from './OrderSummary.module.scss';
 import { SummaryForm } from './SummaryForm';
 
 interface OrderSummaryProps {
   setOrderPhase: (orderPhase: OrderPhases) => void;
 }
 
+interface OptionProps {
+  className?: string;
+}
+
 const OrderSummary = (props: OrderSummaryProps): JSX.Element => {
   const { setOrderPhase } = props;
   const [orderDetails] = useOrderDetails();
 
-  const scoopsTotal = orderDetails?.totals?.scoops || 0;
-  const toppingsTotal = orderDetails?.totals?.toppings || 0;
+  const scoopsTotal = orderDetails?.totals?.scoops || formatCurrency(0);
+  const toppingsTotal = orderDetails?.totals?.toppings || formatCurrency(0);
 
   const scoops = Array.from(orderDetails?.scoops?.entries() || []);
 
-  const ScoopList = (): JSX.Element => {
+  const ScoopList = (scoopListProps: OptionProps): JSX.Element => {
     if (!scoops.length) {
       return <></>;
     }
     return (
-      <ul>
+      <ul className={scoopListProps.className}>
         {scoops.map(([scoop, quantity]) => (
           <li key={scoop}>
-            {scoop}: {quantity}
+            {quantity} {scoop}
           </li>
         ))}
       </ul>
@@ -33,12 +38,12 @@ const OrderSummary = (props: OrderSummaryProps): JSX.Element => {
 
   const toppings = Array.from(orderDetails?.toppings?.entries() || []);
 
-  const ToppingList = (): JSX.Element => {
+  const ToppingList = (toppingsListProps: OptionProps): JSX.Element => {
     if (!toppings.length) {
       return <></>;
     }
     return (
-      <ul>
+      <ul className={toppingsListProps.className}>
         {toppings.map(([topping]) => (
           <li key={topping}>{topping}</li>
         ))}
@@ -46,28 +51,28 @@ const OrderSummary = (props: OrderSummaryProps): JSX.Element => {
     );
   };
 
-  const Scoops = (): JSX.Element => {
+  const Scoops = (scoopProps: OptionProps): JSX.Element => {
     if (!scoops.length) {
-      return <p>No scoops ordered</p>;
+      return <p className={scoopProps.className}>No scoops ordered</p>;
     }
     return (
-      <>
-        <h2>Scoops: {scoopsTotal}</h2>
-        <ScoopList />
-      </>
+      <div className={scoopProps.className}>
+        <h2 className="title">Scoops: {scoopsTotal}</h2>
+        <ScoopList className="list" />
+      </div>
     );
   };
 
-  const Toppings = (): JSX.Element => {
+  const Toppings = (toppingsProps: OptionProps): JSX.Element => {
     if (!toppings.length) {
-      return <p>No toppings ordered</p>;
+      return <p className={toppingsProps.className}>No toppings ordered</p>;
     }
 
     return (
-      <>
-        <h2>Toppings: {toppingsTotal}</h2>
-        <ToppingList />
-      </>
+      <div className={toppingsProps.className}>
+        <h2 className="title">Toppings: {toppingsTotal}</h2>
+        <ToppingList className="list" />
+      </div>
     );
   };
 
@@ -79,9 +84,11 @@ const OrderSummary = (props: OrderSummaryProps): JSX.Element => {
     <main className={style.container}>
       <h1 className={style.title}>Order Summary</h1>
 
-      <Scoops />
+      <Scoops className={style.scoops} />
 
-      <Toppings />
+      <Toppings className={style.toppings} />
+
+      <span className={style.total}>Total: {orderDetails.totals.grandTotal}</span>
 
       <SummaryForm onFinished={onFinished} />
     </main>

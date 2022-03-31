@@ -1,0 +1,42 @@
+@import '../../assets/sass/resources';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+
+  .title {
+    margin: 2rem 0;
+    width: 100%;
+  }
+
+  .scoops,
+  .toppings {
+    color: $color-dark-gray;
+    margin-bottom: 2rem;
+
+    ul {
+      margin: 1rem 0;
+      padding-left: 1rem;
+
+      li {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        margin: 1rem 0;
+
+        &:before {
+          content: '';
+          min-height: 1.6rem;
+          min-width: 1.6rem;
+          background-color: $color-purple;
+          display: inline-block;
+          border-radius: 50%;
+          margin-right: 1rem;
+        }
+      }
+    }
+  }
+}

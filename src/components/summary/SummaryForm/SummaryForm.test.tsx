@@ -1,9 +1,5 @@
 /* eslint-disable max-lines-per-function */
-import {
-  render,
-  screen,
-  waitForElementToBeRemoved,
-} from '@testing-library/react';
+import { render, screen, waitForElementToBeRemoved } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { MouseEvent } from 'react';
 import { SummaryForm } from './SummaryForm';
@@ -18,9 +14,7 @@ describe('<SummaryForm />', () => {
       render(<SummaryForm onFinished={spyOnFinished} />);
 
       const checkbox = screen.getByRole('checkbox');
-      const checkboxLabel = screen.getByLabelText(
-        'I agree to Terms and Conditions',
-      );
+      const checkboxLabel = screen.getByLabelText('I agree to Terms and Conditions');
 
       expect(checkbox).not.toBeChecked();
       expect(checkboxLabel).toBeInTheDocument(); // toHaveTextContent("I agree to");
@@ -42,9 +36,7 @@ describe('<SummaryForm />', () => {
       render(<SummaryForm onFinished={spyOnFinished} />);
 
       const checkbox = screen.getByRole('checkbox');
-      const checkboxLabel = screen.getByLabelText(
-        'I agree to Terms and Conditions',
-      );
+      const checkboxLabel = screen.getByLabelText('I agree to Terms and Conditions');
 
       expect(checkbox).not.toBeChecked();
       userEvent.click(checkboxLabel);
@@ -160,9 +152,7 @@ describe('<SummaryForm />', () => {
         render(<SummaryForm onFinished={spyOnFinished} />);
 
         const checkbox = screen.getByRole('checkbox');
-        const checkboxLabel = screen.getByLabelText(
-          'I agree to Terms and Conditions',
-        );
+        const checkboxLabel = screen.getByLabelText('I agree to Terms and Conditions');
 
         checkbox.setAttribute('disabled', 'disabled');
 
@@ -212,9 +202,7 @@ describe('<SummaryForm />', () => {
 
       // or this way
       userEvent.unhover(internSpan);
-      await waitForElementToBeRemoved(
-        screen.queryByText(/App Terms and Conditions/i),
-      );
+      await waitForElementToBeRemoved(screen.queryByText(/App Terms and Conditions/i));
     });
   });
 

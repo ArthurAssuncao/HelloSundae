@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
-import style from './SummaryForm.module.css';
+import { Checkbox } from '../../ui/Checkbox';
+import style from './SummaryForm.module.scss';
 
 interface SummaryFormProps {
   onFinished: () => void;
@@ -40,13 +41,13 @@ const SummaryForm = (props: SummaryFormProps): React.ReactElement => {
   return (
     <form className={style.container} onSubmit={handleFinished}>
       <div className={style.fields}>
-        <input
-          type="checkbox"
-          title="Checkbox I agree to Terms and Conditions"
-          id="summary-form-checkbox"
+        <Checkbox
+          title="I agree to Terms and Conditions"
+          name="summary-form-checkbox"
           checked={checkboxCheck}
           onChange={checkboxToggle}
           className={style.checkbox}
+          ariaLabel="I agree to Terms and Conditions"
         />
         <div className={style.labelWrapper}>
           <label htmlFor="summary-form-checkbox">
@@ -77,11 +78,7 @@ const SummaryForm = (props: SummaryFormProps): React.ReactElement => {
           )}
         </div>
       </div>
-      <button
-        type="submit"
-        disabled={!checkboxCheck}
-        className={style.confirmButton}
-      >
+      <button type="submit" disabled={!checkboxCheck} className={style.confirmButton}>
         Confirm order
       </button>
     </form>

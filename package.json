@@ -67,6 +67,7 @@
     "prettier": "^2.6.1",
     "react-bootstrap": "^2.2.2",
     "react-toastify": "^8.2.0",
-    "sass": "^1.49.9"
+    "sass": "^1.49.9",
+    "ts-jest": "^27.1.4"
   }
 }
