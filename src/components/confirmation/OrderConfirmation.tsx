@@ -4,6 +4,8 @@ import { SERVER_URL } from '../../constants';
 import { useOrderDetails } from '../../context/OrderDetails';
 import { OrderPhases } from '../App/App';
 import { AlertBanner } from '../common/AlertBanner';
+import { Button } from '../ui/Button';
+import style from './OrderConfirmation.module.scss';
 
 interface OrderConfirmationProps {
   setOrderPhase: (orderPhase: OrderPhases) => void;
@@ -43,19 +45,23 @@ const OrderConfirmation = (props: OrderConfirmationProps): React.ReactElement =>
 
   if (orderNumber === null) {
     return (
-      <div>
-        <h1>Loading...</h1>
-      </div>
+      <main className={style.container}>
+        <h1 className={style.title}>Loading...</h1>
+      </main>
     );
   }
 
   return (
-    <div>
-      <h1>Thank You!</h1>
-      <p>Your order number is {orderNumber}</p>
-      <p>as per our terms and conditions, nothing will happend now</p>
-      <button onClick={handleClick}>Create new order</button>
-    </div>
+    <main className={style.container}>
+      <h1 className={style.title}>Thank You!</h1>
+      <p className={style.orderNumberMsg}>
+        Your order number is <span className={style.orderNumber}>{orderNumber}</span>
+      </p>
+      <p className={style.terms}>as per our terms and conditions, nothing will happend now</p>
+      <Button onClick={handleClick} className={style.button} ariaLabel="Create new order">
+        Create new order
+      </Button>
+    </main>
   );
 };
 
