@@ -46,7 +46,7 @@ const ScoopComp = (props: Scoop): React.ReactElement => {
   };
 
   return (
-    <div className={classNames(className, style.container)}>
+    <div className={classNames(style.container, className)}>
       <img src={`${SERVER_URL.base}${imagePath}`} alt={`${name} scoop`} className={style.image} />
       <span className={style.name}>{name}</span>
       <form className={style.form}>

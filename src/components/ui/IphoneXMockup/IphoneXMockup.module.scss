@@ -21,17 +21,25 @@
 $width: 300px;
 
 .iphoneX {
+  padding: 1rem;
+  height: 100vh;
+}
+
+@media (min-width: 768px) {
+.iphoneX {
   position: relative;
   margin: 20px auto;
   margin-left: 20px;
   width: $width;
   height: 95vh;
-  max-height: 768px;
+  max-height: 640px;
+  height: min(95vh, 640px);
   border-radius: 30px;
   box-shadow: 0px 0px 0px 6px #111, 0px 0px 0px 9px #191919, 0px 0px 0px 12px #102c35,
     0px 0px 0px 13px #225e71, 0px 0px 0px 15px #999;
   overflow-x: hidden;
   overflow-y: scroll;
+  padding: 0;
 
   scrollbar-color: #999 #333;
   -ms-overflow-style: auto;
@@ -153,4 +161,5 @@ $width: 300px;
       }
     }
   }
+}
 }

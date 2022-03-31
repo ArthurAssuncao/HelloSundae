@@ -11,8 +11,8 @@ const IphoneXMockup = (props: IphoneXMockupProps): JSX.Element => {
   return (
     <div className={classNames(style.iphoneX, className)}>
       <div className={style.deviceTop}>
-        <i className={style.speaker}>Speaker</i>
-        <b className={style.camera}>Camera</b>
+        <span className={style.speaker}></span>
+        <span className={style.camera}></span>
       </div>
       {children}
     </div>

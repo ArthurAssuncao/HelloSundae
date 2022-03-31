@@ -1,4 +1,5 @@
 import axios from 'axios';
+import classNames from 'classnames';
 import React, { useEffect, useState } from 'react';
 import { PRICE_PER_ITEM, SERVER_URL } from '../../../constants';
 import { useOrderDetails } from '../../../context/OrderDetails';
@@ -14,7 +15,7 @@ interface Option {
 }
 
 const Options = (props: Option): React.ReactElement => {
-  const { optionType } = props;
+  const { optionType, className } = props;
 
   const [error, setError] = useState<boolean>(false);
   const [orderDetails, updateItemCount] = useOrderDetails();
@@ -36,7 +37,7 @@ const Options = (props: Option): React.ReactElement => {
         name={item.name}
         imagePath={item.imagePath}
         updateItemCount={orderDetails ? updateItemCountFunc : () => {}}
-        className={style.optionType}
+        className={classNames(style.optionType, className)}
       />
     );
   });

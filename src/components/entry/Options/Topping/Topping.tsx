@@ -24,7 +24,7 @@ const ToppingComp = (props: Topping): React.ReactElement => {
   };
 
   return (
-    <div className={classNames(className, style.container)}>
+    <div className={classNames(style.container, className)}>
       <img src={`${SERVER_URL.base}${imagePath}`} alt={`${name} topping`} className={style.image} />
 
       <form className={style.form}>

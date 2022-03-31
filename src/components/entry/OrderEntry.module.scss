@@ -1,3 +1,5 @@
+@import '../../assets/sass/resources';
+
 .container {
   display: flex;
   flex-direction: column;
@@ -7,9 +9,14 @@
   .title {
     align-self: flex-start;
     margin-bottom: 2rem;
+    font-size: $text-h2;
   }
 
   .grandTotal {
-    margin: 2rem 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .scoops, .toppings{
+    width: 100%;
   }
 }

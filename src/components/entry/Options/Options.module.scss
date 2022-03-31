@@ -3,7 +3,7 @@
 .container {
   display: flex;
   flex-direction: column;
-  margin: 1rem 0;
+  margin-bottom: 2rem;
 
   .price,
   .total {
@@ -16,11 +16,15 @@
     margin-bottom: 1rem;
   }
 
+  .title{
+    font-size: $text-h4;
+  }
+
   .optionsItems {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 3rem;
+    gap: 2rem;
 
     display: grid;
     grid-template-columns: auto auto;

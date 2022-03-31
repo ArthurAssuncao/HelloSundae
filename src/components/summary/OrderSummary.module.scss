@@ -9,14 +9,19 @@
   .title {
     margin: 0 0 2rem 0;
     width: 100%;
+    font-size: $text-h2;
   }
 
   .scoops,
   .toppings {
     color: $color-dark-gray;
     margin-bottom: 2rem;
+    
+    .title{
+      font-size: $text-h4;
+    }
 
-    ul {
+    .list {
       margin: 1rem 0;
       padding-left: 1rem;
 

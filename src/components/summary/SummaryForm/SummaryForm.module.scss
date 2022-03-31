@@ -35,23 +35,7 @@
       box-shadow: 0 0 10px var(--color-dark-gray);
     }
   }
-  .confirmButton {
-    margin: 1.5rem 0;
-    height: 3rem;
-    width: 16rem;
-    background-color: var(--color-blue);
-    border-radius: 1rem;
-    color: var(--color-white);
-    font-size: 1.2rem;
-    transition: background-color 0.5s ease;
-    &:disabled {
-      background-color: var(--color-light-gray);
-    }
-    &:hover {
-      background-color: var(--color-green);
-      cursor: pointer;
-    }
-  }
+
 }
 @media (min-width: 768px) {
   .container {

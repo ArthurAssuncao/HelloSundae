@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: center;
 
-  padding: 1.5rem;
+  padding: 1rem;
 
   background-color: $color-white;
 
@@ -15,11 +15,14 @@
   border-radius: 1rem;
 
   .image {
-    height: 9.6rem;
+    height: 8rem;
     margin-bottom: 1rem;
   }
 
   .name {
+    font-size: 1.36rem;
     margin-bottom: 1rem;
+    text-align: center;
+    min-width: 110px;
   }
 }

@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import { Button } from '../../ui/Button';
 import { Checkbox } from '../../ui/Checkbox';
 import style from './SummaryForm.module.scss';
 
@@ -78,9 +79,15 @@ const SummaryForm = (props: SummaryFormProps): React.ReactElement => {
           )}
         </div>
       </div>
-      <button type="submit" disabled={!checkboxCheck} className={style.confirmButton}>
+      <Button
+        ariaLabel="Confirm order"
+        type="submit"
+        disabled={!checkboxCheck}
+        className={style.confirmButton}
+        onClick={onFinished}
+      >
         Confirm order
-      </button>
+      </Button>
     </form>
   );
 };

@@ -9,10 +9,11 @@
   gap: 2rem;
 
   .title {
-    color: $color-dark-gray;
+    color: $color-text;
+    font-size: $text-h2;
   }
 
-  .orderNumberMsg {
+  .orderNumberMsg, .terms {
     color: $color-dark-gray;
     .orderNumber {
       color: $color-text;

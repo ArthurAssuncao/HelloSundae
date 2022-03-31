@@ -59,8 +59,8 @@ const OrderSummary = (props: OrderSummaryProps): JSX.Element => {
     }
     return (
       <div className={scoopProps.className}>
-        <h2 className="title">Scoops: {scoopsTotal}</h2>
-        <ScoopList className="list" />
+        <h2 className={style.title}>Scoops: {scoopsTotal}</h2>
+        <ScoopList className={style.list} />
       </div>
     );
   };
@@ -72,8 +72,8 @@ const OrderSummary = (props: OrderSummaryProps): JSX.Element => {
 
     return (
       <div className={toppingsProps.className}>
-        <h2 className="title">Toppings: {toppingsTotal}</h2>
-        <ToppingList className="list" />
+        <h2 className={style.title}>Toppings: {toppingsTotal}</h2>
+        <ToppingList className={style.list} />
       </div>
     );
   };
